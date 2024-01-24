@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using GlobalGameJam.Data;
+
 namespace GlobalGameJam
 {
     public class ApplicationCore : MonoBehaviour
@@ -22,6 +24,18 @@ namespace GlobalGameJam
 
         private IEnumerator coroutine_initializeApplication()
         {
+            List<IInitializable> initializations = new List<IInitializable>();
+            initializations.Add(new DatabaseManager());
+
+            for (int i = 0; i < initializations.Count; i++)
+            {
+                IEnumerator initialization = initializations[i].Initialize();
+                while (initialization.MoveNext())
+                {
+                    yield return initialization.Current;
+                }
+            }
+
             IsInitialized = true;
             _currentScene = (SceneEnums)SceneManager.GetActiveScene().buildIndex;
 
