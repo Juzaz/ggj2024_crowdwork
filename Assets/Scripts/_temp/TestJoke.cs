@@ -11,7 +11,6 @@ public class TestJoke : MonoBehaviour
     [SerializeField] JokeData _joke = null;
     [SerializeField] IdeaData[] _ideas = null;
 
-    [ContextMenu("test joke")]
     void testLoad()
     {
         _joke.InitializeData();

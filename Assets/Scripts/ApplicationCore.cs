@@ -19,10 +19,10 @@ namespace GlobalGameJam
             Instance = this;
             GameObject.DontDestroyOnLoad(this);
 
-            StartCoroutine(coroutine_initializeApplication());
+            StartCoroutine(InitializeApplication());
         }
 
-        private IEnumerator coroutine_initializeApplication()
+        private IEnumerator InitializeApplication()
         {
             List<IInitializable> initializations = new List<IInitializable>();
             initializations.Add(new DatabaseManager());

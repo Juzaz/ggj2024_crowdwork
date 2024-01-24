@@ -15,8 +15,6 @@ namespace GlobalGameJam.Data
         {
             SplittedJoke = Joke.Split('§');
             IdeaCount = SplittedJoke.Length - 1;
-
-            Debug.Log("Idea count: " + IdeaCount);
         }
 
         public string GetJoke(IdeaData[] ideas)
