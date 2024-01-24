@@ -50,8 +50,9 @@ namespace GlobalGameJam
                 return;
             }
 
-            Debug.LogError($"Changing to scene: {scene}");
+            Debug.Log($"Changing to scene: {scene}");
             _currentScene = scene;
+
             SceneManager.LoadScene((int)scene);
         }
     }

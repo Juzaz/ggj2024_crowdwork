@@ -25,6 +25,16 @@ namespace GlobalGameJam.Data
             _ideaList.AddRange(Resources.LoadAll<IdeaData>("Datafiles/Ideas"));
             _attributeList.AddRange(Resources.LoadAll<AttributeData>("Datafiles/Attributes"));
 
+            List<IInitializableData> initializableDatas = new List<IInitializableData>();
+            initializableDatas.AddRange(_jokeList);
+            initializableDatas.AddRange(_ideaList);
+            initializableDatas.AddRange(_attributeList);
+
+            for (int i = 0; i < initializableDatas.Count; i++)
+            {
+                initializableDatas[i].InitializeData();
+            }
+
             yield break;
         }
 
