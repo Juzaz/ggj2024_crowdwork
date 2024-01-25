@@ -82,10 +82,10 @@ namespace GlobalGameJam.Gameplay.States
                 }
             }
 
-            AudioClip audioClip = null;
-            _delayLenght = audioClip.length;
+            //AudioClip audioClip = null;
+            //_delayLenght = audioClip.length;
 
-            AudioManager.Instance.PlaySFX(audioClip);
+            //AudioManager.Instance.PlaySFX(audioClip);
         }
 
         protected override void DisableState()

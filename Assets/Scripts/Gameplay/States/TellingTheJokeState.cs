@@ -27,6 +27,7 @@ namespace GlobalGameJam.Gameplay.States
         AudioClip _drumrollClip = null;
         float _drumrollLenght = 1.0f;
         float _timeToEnd = 1.0f;
+        bool _failed = false;
 
         protected override void InitializeState()
         {
@@ -38,17 +39,18 @@ namespace GlobalGameJam.Gameplay.States
             _drumrollClip = null;
             _jokeData = null;
             _jokeToTell = string.Empty;
+            _failed = false;
 
             IdeaData[] ideas = microphone.CollectedIdeas;
             int jokeIdeaCount = Mathf.Min(4, ideas.Length);
 
             List<JokeData> jokes = DatabaseManager.Instance.GetJokesWithIdeaCount(jokeIdeaCount);
+            _drumrollLenght = 0.55f;
 
             if (jokes.Count != 0)
             {
                 _drumrollClip = _drumrolls[Random.Range(0, _drumrolls.Length)];
-                _drumrollLenght = _drumrollClip.length;
-
+                
                 AudioManager.Instance.PlaySFX(_drumrollClip);
 
                 _jokeData = jokes[Random.Range(0, jokes.Count)];
@@ -56,10 +58,7 @@ namespace GlobalGameJam.Gameplay.States
             }
             else
             {
-                _comicAnimator.SetTrigger("Missed");
-
-                AudioManager.Instance.PlaySFX(_missedJoke);
-                _timeToEnd = _missedJoke.length;
+                _failed = true;
             }
         }
 
@@ -70,11 +69,11 @@ namespace GlobalGameJam.Gameplay.States
 
         private void Update()
         {
+            _drumrollLenght -= Time.deltaTime;
+            if (_drumrollLenght > 0.0f) return;
+
             if (_jokeData != null)
             {
-                _drumrollLenght -= Time.deltaTime;
-                if (_drumrollLenght > 0.0f) return;
-
                 _jokeText.SetText(_jokeToTell);
                 _jokeText.transform.parent.gameObject.SetActive(true);
 
@@ -87,6 +86,15 @@ namespace GlobalGameJam.Gameplay.States
                 _gameplayManager.SetToldJoke(_jokeData, microphone.CollectedIdeas);
                 _jokeData = null;
                 return;
+            }
+
+            if (_failed)
+            {
+                _failed = false;
+                _comicAnimator.SetTrigger("Missed");
+
+                AudioManager.Instance.PlaySFX(_missedJoke);
+                _timeToEnd = _missedJoke.length;
             }
 
             _timeToEnd -= Time.deltaTime;

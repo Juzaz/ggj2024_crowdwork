@@ -12,8 +12,11 @@ namespace GlobalGameJam.Gameplay.States
         [SerializeField] private GameObject _ideasParent = null;
         [SerializeField] private Animator _comedianAnimator = null;
         [SerializeField] private Microphone _microphone = null;
+        [SerializeField] private ReturningMicrophone _returningMicrophone = null;
+        [SerializeField] private AudioClip _throwMicrophone = null;
 
         private List<IdeaBubble> _ideaBubbles = new List<IdeaBubble>();
+
 
         protected override void InitializeState()
         {
@@ -24,6 +27,7 @@ namespace GlobalGameJam.Gameplay.States
         {
             _comedianAnimator.SetTrigger("Throw");
             _microphone.gameObject.SetActive(true);
+            Audio.AudioManager.Instance.PlaySFX(_throwMicrophone, 0.1f);
         }
 
         protected override void DisableState()
@@ -38,6 +42,7 @@ namespace GlobalGameJam.Gameplay.States
         {
             if (!_microphone.gameObject.activeSelf)
             {
+                _returningMicrophone.gameObject.SetActive(true);
                 EndState();
             }
         }

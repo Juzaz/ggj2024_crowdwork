@@ -349,6 +349,8 @@ MonoBehaviour:
   _ideasParent: {fileID: 0}
   _comedianAnimator: {fileID: 0}
   _microphone: {fileID: 0}
+  _returningMicrophone: {fileID: 0}
+  _throwMicrophone: {fileID: 8300000, guid: a98abc7e45a35bc4bbeb32cdc3ad09be, type: 3}
 --- !u!1 &7336482180723015348
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,7 +491,6 @@ MonoBehaviour:
   _comicAnimator: {fileID: 0}
   _jokeText: {fileID: 0}
   _drumrolls:
-  - {fileID: 8300000, guid: b7b0e8f781da0274ba4bd3c32329d629, type: 3}
-  - {fileID: 8300000, guid: 25a129bf43ddeed499b83f4afd5a591e, type: 3}
+  - {fileID: 8300000, guid: f896f717a5b17c04f96a41b080c317d4, type: 3}
   _missedJoke: {fileID: 8300000, guid: 00574ce25cd6b7a43aa3d07231970c04, type: 3}
   _defaultJoke: {fileID: 8300000, guid: c803bfefae618d54d87b0031886671d2, type: 3}

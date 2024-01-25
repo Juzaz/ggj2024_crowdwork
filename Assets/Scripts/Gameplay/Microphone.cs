@@ -37,7 +37,7 @@ namespace GlobalGameJam.Gameplay
             _collectedIdeas.Clear();
 
             _forceAndAngleSet = false;
-            _force = new Vector3(_launchAngle, 1.0f, 0.0f) * _launchForce;
+            _force = new Vector3(_launchAngle, 1.0f - _launchAngle, 0.0f) * _launchForce;
         }
 
         private void OnDisable()
@@ -50,7 +50,7 @@ namespace GlobalGameJam.Gameplay
             _forceAndAngleSet = true;
 
             _launchAngle = 1.0f - angle;
-            _launchForce = 1.0f + (force * 4.0f);
+            _launchForce = 1.0f + (force * 7.0f);
         }
 
         private void FixedUpdate()
