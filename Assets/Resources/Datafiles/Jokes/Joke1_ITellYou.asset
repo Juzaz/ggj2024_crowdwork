@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94c8047eea037bd4bbf3a12df67ad9f4, type: 3}
-  m_Name: Joke_01
+  m_Name: Joke1_ITellYou
   m_EditorClassIdentifier: 
-  Joke: "I don't suffer from \xA7 - I envy every minute of it."
+  Joke: "I tell you, I get no \xA7."
+  Audio: {fileID: 8300000, guid: aff85db64f3659f4eb92cbecea86fa53, type: 3}
