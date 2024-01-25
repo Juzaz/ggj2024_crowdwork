@@ -60,10 +60,13 @@ namespace GlobalGameJam.Gameplay
         {
             _gameStateDictionary[_gameplayState].EndState();
 
-            int gameplayState = (int)_gameplayState + 1;
-            if (gameplayState >= (int)GameplayStateEnum.Cleanup)
+            if (_gameplayState == GameplayStateEnum.Cleanup) // Loop point
             {
                 _gameplayState = GameplayStateEnum.AudienceAttributes;
+            }
+            else
+            {
+                _gameplayState = (GameplayStateEnum)(_gameplayState + 1);
             }
 
             _gameStateDictionary[_gameplayState].StartState(onGameStateFinished);
