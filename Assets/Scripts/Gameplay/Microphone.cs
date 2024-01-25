@@ -13,6 +13,9 @@ namespace GlobalGameJam.Gameplay
         [SerializeField, Range(0.01f, 1.0f)] private float _timeScale = 1.0f;
         [SerializeField] private float _mavity = 9.81f;
 
+        [Header("")]
+        [SerializeField] List<AudioClip> _hittedIdeaAudioList = new List<AudioClip>();
+
         private Vector3 _startingPosition;
         private Vector3 _force;
         private bool _forceAndAngleSet;
@@ -63,13 +66,13 @@ namespace GlobalGameJam.Gameplay
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("OnTriggerEnter2D: " + collision.name);
             IdeaBubble collectedIdea = collision.GetComponent<IdeaBubble>();
-
             if (collectedIdea != null)
             {
                 _collectedIdeas.Add(collectedIdea.AttachedIdea);
                 collectedIdea.gameObject.SetActive(false);
+
+                Audio.AudioManager.Instance.PlayerSFX(_hittedIdeaAudioList[Random.Range(0, _hittedIdeaAudioList.Count)]);
             }
         }
     }

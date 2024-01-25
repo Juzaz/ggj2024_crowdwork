@@ -133,6 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dadf502249c94a44992a21faca032ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _launchAngle: 0
-  _launchForce: 10
+  _timeScale: 1
   _mavity: 9.81
+  _hittedIdeaAudioList:
+  - {fileID: 8300000, guid: 6a7d9bb3ce008f44eb50f5a764c8051c, type: 3}
+  - {fileID: 8300000, guid: 51e6d001083dbca46bd44dad1ebc11f2, type: 3}
+  - {fileID: 8300000, guid: 33746e8530c82f64bbe89d0ccd6685b9, type: 3}
+  - {fileID: 8300000, guid: 8b8c2229b320aa046a136189e2b7272c, type: 3}
