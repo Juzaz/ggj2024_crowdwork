@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Comedian_Joking
+  m_Name: Comedian_Sweating
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 794691593, guid: cbae1143753446143bd804bbcc98792f, type: 3}
-    - time: 0.083333336
-      value: {fileID: 794691593, guid: cbae1143753446143bd804bbcc98792f, type: 3}
+      value: {fileID: 2078600371, guid: 197d18756ab17154aabcba369710bbaa, type: 3}
     - time: 0.33333334
-      value: {fileID: -253611056, guid: cbae1143753446143bd804bbcc98792f, type: 3}
+      value: {fileID: -1477565842, guid: 197d18756ab17154aabcba369710bbaa, type: 3}
     - time: 0.6666667
-      value: {fileID: 794691593, guid: cbae1143753446143bd804bbcc98792f, type: 3}
+      value: {fileID: 2078600371, guid: 197d18756ab17154aabcba369710bbaa, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,10 +48,9 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 794691593, guid: cbae1143753446143bd804bbcc98792f, type: 3}
-    - {fileID: 794691593, guid: cbae1143753446143bd804bbcc98792f, type: 3}
-    - {fileID: -253611056, guid: cbae1143753446143bd804bbcc98792f, type: 3}
-    - {fileID: 794691593, guid: cbae1143753446143bd804bbcc98792f, type: 3}
+    - {fileID: 2078600371, guid: 197d18756ab17154aabcba369710bbaa, type: 3}
+    - {fileID: -1477565842, guid: 197d18756ab17154aabcba369710bbaa, type: 3}
+    - {fileID: 2078600371, guid: 197d18756ab17154aabcba369710bbaa, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

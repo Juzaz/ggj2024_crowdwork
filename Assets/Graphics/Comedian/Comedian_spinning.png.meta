@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 32eb70415ac23c44e85a5c0d5691b390
+guid: 0fd84a83f4f88994dadecc833aeaf539
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,12 +136,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Comedian_Idle_0
+      name: Comedian_idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 53
+        width: 70
         height: 100
       alignment: 6
       pivot: {x: 0, y: 0}
@@ -150,19 +150,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e2cdde717fa03e4a907bd3930e22b44
-      internalID: 1279200920
+      spriteID: 951c030a95281504db5b5feec4c96d2e
+      internalID: 2086101009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Comedian_Idle_1
+      name: Comedian_idle_1
       rect:
         serializedVersion: 2
-        x: 53
+        x: 70
         y: 0
-        width: 53
+        width: 70
         height: 100
       alignment: 6
       pivot: {x: 0, y: 0}
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd05c7a757386fb4dafe31fbeb44ee4b
-      internalID: -1412264231
+      spriteID: c71cfa7ace9626247831878e109474e7
+      internalID: -2027070214
       vertices: []
       indices: 
       edges: []
@@ -180,7 +180,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8c034e99c8e81784bb0908dff561a3c6
+    spriteID: adccbfa5914cafb4582e293872cb1c98
     internalID: 0
     vertices: []
     indices: 
@@ -188,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Comedian_Idle_0: 1279200920
-      Comedian_Idle_1: -1412264231
+      Comedian_idle_0: 2086101009
+      Comedian_idle_1: -2027070214
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
