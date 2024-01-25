@@ -1,4 +1,5 @@
 using UnityEngine;
+using GlobalGameJam.Audio;
 
 namespace GlobalGameJam.Gameplay.States
 {
@@ -18,6 +19,8 @@ namespace GlobalGameJam.Gameplay.States
         protected override void EnableState()
         {
             _introTimer = 0.0f;
+
+            AudioManager.Instance.StartMusic(_music);
         }
 
         protected override void DisableState()

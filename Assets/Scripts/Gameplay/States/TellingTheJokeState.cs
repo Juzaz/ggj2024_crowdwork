@@ -20,7 +20,7 @@ namespace GlobalGameJam.Gameplay.States
 
         protected override void InitializeState()
         {
-            _jokeText.gameObject.SetActive(false);
+            _jokeText.transform.parent.gameObject.SetActive(false);
         }
 
         protected override void EnableState()
@@ -35,14 +35,14 @@ namespace GlobalGameJam.Gameplay.States
                 JokeData _joke = jokes[Random.Range(0, jokes.Count)];
                 _jokeText.SetText(_joke.GetJoke(ideas));
 
-                _jokeText.gameObject.SetActive(true);
+                _jokeText.transform.parent.gameObject.SetActive(true);
                 _comicAnimator.SetTrigger("Joke");
 
                 _timeToEnd = 10.0f;
             }
             else
             {
-                _comicAnimator.SetTrigger("Bad");
+                //_comicAnimator.SetTrigger("Bad");
 
                 _timeToEnd = 5.0f;
             }
@@ -51,7 +51,7 @@ namespace GlobalGameJam.Gameplay.States
 
         protected override void DisableState()
         {
-            _jokeText.gameObject.SetActive(false);
+            _jokeText.transform.parent.gameObject.SetActive(false);
         }
 
         private void Update()

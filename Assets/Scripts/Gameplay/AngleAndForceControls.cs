@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace GlobalGameJam.Gameplay
@@ -23,6 +21,9 @@ namespace GlobalGameJam.Gameplay
         {
             _angleControls.gameObject.SetActive(true);
             _forceControls.gameObject.SetActive(false);
+
+            _angleValue = 0.0f;
+            _forceValue = 0.0f;
 
             _incrementValue = 1;
             _settingAngle = true;
