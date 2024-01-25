@@ -25,6 +25,7 @@ namespace GlobalGameJam.Gameplay.States
 
         public void StartState(Action onComplete)
         {
+            Debug.Log($"Starting {State}");
             OnCompleted = onComplete;
 
             gameObject.SetActive(true);
@@ -34,6 +35,7 @@ namespace GlobalGameJam.Gameplay.States
         {
             if (!gameObject.activeSelf) return;
 
+            Debug.Log($"Ending {State}");
             gameObject.SetActive(false);
 
             OnCompleted?.Invoke();
