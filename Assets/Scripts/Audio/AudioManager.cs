@@ -40,13 +40,31 @@ namespace GlobalGameJam.Audio
             }
         }
 
-        public void PlayerSFX(AudioClip audioClip)
+        public void PlaySFX(AudioClip audioClip)
         {
-            _sfxSources[_sfxSourceIndex].clip = audioClip;
-            _sfxSources[_sfxSourceIndex].Play();
+            AudioSource audioSource = _sfxSources[_sfxSourceIndex];
+
+            audioSource.clip = audioClip;
+            audioSource.pitch = 1.0f;
+            audioSource.Play();
 
             _sfxSourceIndex++;
             if (_sfxSourceIndex >= _sfxSources.Length -1)
+            {
+                _sfxSourceIndex = 0;
+            }
+        }
+
+        public void PlaySFX(AudioClip audioClip, float pitchRange)
+        {
+            AudioSource audioSource = _sfxSources[_sfxSourceIndex];
+
+            audioSource.clip = audioClip;
+            audioSource.pitch = 1.0f + Random.Range(-pitchRange, pitchRange);
+            audioSource.Play();
+
+            _sfxSourceIndex++;
+            if (_sfxSourceIndex >= _sfxSources.Length - 1)
             {
                 _sfxSourceIndex = 0;
             }

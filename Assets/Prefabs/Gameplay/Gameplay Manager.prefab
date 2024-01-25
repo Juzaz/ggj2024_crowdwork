@@ -143,6 +143,9 @@ MonoBehaviour:
   _comicAnimator: {fileID: 0}
   _microphone: {fileID: 0}
   forceControls: {fileID: 0}
+  _microphoneSpinDelay: 0.35
+  _microphoneSpinPitchRange: 0.15
+  _microphoneSpinAudio: {fileID: 8300000, guid: 5a663c2a60c318f48acf38616f24c6aa, type: 3}
 --- !u!1 &1744937361787859529
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce1318c2ae0f034cbfa1982bdfc768d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _introSequenceLenght: 3
+  _introSequenceLenght: 1.25
   _comedian: {fileID: 0}
   _music: {fileID: 8300000, guid: 5ccebd32ea7f8584cbaa316461acbc35, type: 3}
 --- !u!1 &5870129734240586875

@@ -72,7 +72,7 @@ namespace GlobalGameJam.Gameplay
                 _collectedIdeas.Add(collectedIdea.AttachedIdea);
                 collectedIdea.gameObject.SetActive(false);
 
-                Audio.AudioManager.Instance.PlayerSFX(_hittedIdeaAudioList[Random.Range(0, _hittedIdeaAudioList.Count)]);
+                Audio.AudioManager.Instance.PlaySFX(_hittedIdeaAudioList[Random.Range(0, _hittedIdeaAudioList.Count)]);
             }
         }
     }
