@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using GlobalGameJam.Audio;
 using GlobalGameJam.Data;
 
 namespace GlobalGameJam.Gameplay.States
@@ -24,6 +25,11 @@ namespace GlobalGameJam.Gameplay.States
         [SerializeField] private Animator _comicAnimator = null;
         [SerializeField] private Microphone _microphone = null;
         [SerializeField] private AngleAndForceControls forceControls = null;
+
+        [SerializeField] private float _microphoneSpinDelay = 0.1f;
+        [SerializeField] private float _microphoneSpinPitchRange = 0.1f;
+        [SerializeField] private AudioClip _microphoneSpinAudio = null;
+        private float _microphoneSpinTimer = 0.0f;
 
         private List<IdeaBubble> _ideaBubbles = new List<IdeaBubble>();
 
@@ -54,7 +60,6 @@ namespace GlobalGameJam.Gameplay.States
             }
 
             _sequenceWait = true;
-            _comicAnimator.SetTrigger("Spinning");
         }
 
         protected override void DisableState()
@@ -71,10 +76,19 @@ namespace GlobalGameJam.Gameplay.States
                 {
                     forceControls.gameObject.SetActive(true);
                     _sequenceWait = false;
+                    _comicAnimator.SetTrigger("Spinning");
                 }
             }
             else
             {
+                _microphoneSpinTimer -= Time.deltaTime;
+
+                if (_microphoneSpinTimer <= 0.0f)
+                {
+                    _microphoneSpinTimer = _microphoneSpinDelay;
+                    AudioManager.Instance.PlaySFX(_microphoneSpinAudio, _microphoneSpinPitchRange);
+                }
+
                 if (!forceControls.gameObject.activeSelf)
                 {
                     EndState();
