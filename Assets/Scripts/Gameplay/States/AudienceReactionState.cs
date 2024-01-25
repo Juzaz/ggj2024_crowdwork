@@ -52,7 +52,7 @@ namespace GlobalGameJam.Gameplay.States
             List<AttributeData> likedAttributes = new List<AttributeData>();
             List<AttributeData> hatedAttributes = new List<AttributeData>();
             List<AttributeData> jokeAttributes = new List<AttributeData>();
-            AttributeData punchlineAttribute = null;
+            //AttributeData punchlineAttribute = null;
 
             for (int i = 0; i < currentIdeas.Length; i++)
             {
@@ -102,6 +102,19 @@ namespace GlobalGameJam.Gameplay.States
                         jokeScore--;
                     }
                 }
+            }
+
+            if (jokeScore >= 4)
+            {
+                _comedian.SetTrigger("Good");
+            }
+            else if (jokeScore <= 0)
+            {
+                _comedian.SetTrigger("Bad");
+            }
+            else
+            {
+                _comedian.SetTrigger("Neutral");
             }
 
             _gameplayManager.AddToScore(jokeScore, satisfiedAudienceMembers, dissatisfiedAudienceMembers);
@@ -169,19 +182,6 @@ namespace GlobalGameJam.Gameplay.States
                     {
                         _delayLenght = dissatisfiedAudio.length;
                     }
-                }
-
-                if (jokeScore > 4)
-                {
-                    _comedian.SetTrigger("Good");
-                }
-                else if (jokeScore <= 0)
-                {
-                    _comedian.SetTrigger("Bad");
-                }
-                else
-                {
-                    _comedian.SetTrigger("Neutral");
                 }
             }
         }
