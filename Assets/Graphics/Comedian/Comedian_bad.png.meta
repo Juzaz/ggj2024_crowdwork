@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f3b06b1c7f47c284db9d06aedb4c5e66
+guid: 84c03557741c75445afc598740f059b6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,12 +136,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Comedian_bad_0
+      name: Comedian_freeze_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 67
+        width: 43
         height: 100
       alignment: 6
       pivot: {x: 0, y: 0}
@@ -150,19 +150,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e247ddb262928548b34dc9c8baa093e
-      internalID: -1390556291
+      spriteID: 0a9a280296bd166479d1e4a10ee295bd
+      internalID: -461173798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Comedian_bad_1
+      name: Comedian_freeze_1
       rect:
         serializedVersion: 2
-        x: 67
+        x: 43
         y: 0
-        width: 67
+        width: 43
         height: 100
       alignment: 6
       pivot: {x: 0, y: 0}
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b94b09d269a77734ea8d85314d6995e2
-      internalID: -543740917
+      spriteID: 75b9078516a884e4095a3d4d73d528e2
+      internalID: 956879709
       vertices: []
       indices: 
       edges: []
@@ -180,7 +180,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 94a4cf8b9504ef9449a0a483be029003
     internalID: 0
     vertices: []
     indices: 
@@ -188,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Comedian_bad_0: -1390556291
-      Comedian_bad_1: -543740917
+      Comedian_freeze_0: -461173798
+      Comedian_freeze_1: 956879709
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

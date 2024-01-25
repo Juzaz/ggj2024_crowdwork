@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c8047eea037bd4bbf3a12df67ad9f4, type: 3}
   m_Name: Joke1_TheLast
   m_EditorClassIdentifier: 
-  Joke: "The last thing I want to do is \xA7; but it\u2019s still on the list."
+  Joke: "The last thing I want to do is \xA7; but it's still on the list."
   Audio: {fileID: 8300000, guid: ef1d56acd49a15e43b2e386f28b54c8f, type: 3}
