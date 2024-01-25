@@ -22,7 +22,7 @@ namespace GlobalGameJam.Data
             string completedJoke = string.Empty;
             for (int i = 0; i < SplittedJoke.Length - 1; i++) // last one is end
             {
-                completedJoke += SplittedJoke[i] + ideas[i].IdeaSprite;
+                completedJoke += SplittedJoke[i] + ideas[i].IdeaTextSprite;
             }
             completedJoke += SplittedJoke[SplittedJoke.Length - 1];
 

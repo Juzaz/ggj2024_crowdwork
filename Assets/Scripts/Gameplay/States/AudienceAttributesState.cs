@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using GlobalGameJam.Data;
-using GlobalGameJam.Gameplay.Audience;
 
 namespace GlobalGameJam.Gameplay.States
 {

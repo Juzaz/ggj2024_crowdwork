@@ -89,7 +89,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f8c02b364122049a812a154b8015d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sequenceLenght: 1
+  _sequenceLenght: 10
+  _minIdeaCount: 5
+  _maxIdeaCount: 10
+  _ideasParent: {fileID: 0}
+  _horizontalRange: {x: -0.5, y: 2}
+  _verticalRange: {x: 1, y: 2}
 --- !u!1 &1744937361787859529
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _introSequenceLenght: 3
+  _comedian: {fileID: 0}
 --- !u!1 &6014669969681111703
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,8 +190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waitForInitialization: {fileID: 0}
-  _gameStateParent: {fileID: 6014669969681111703}
   _audienceParent: {fileID: 0}
+  _ideasParent: {fileID: 0}
 --- !u!1 &7336482180723015348
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,3 +237,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sequenceLenght: 5
+  _audienceParent: {fileID: 0}

@@ -16,12 +16,10 @@ namespace GlobalGameJam.Gameplay.States
         protected override void EnableState()
         {
             _introTimer = 0.0f;
-            _comedian.speed = 0.0f;
         }
 
         protected override void DisableState()
         {
-            _comedian.speed = 1.0f;
         }
 
         private void Update()

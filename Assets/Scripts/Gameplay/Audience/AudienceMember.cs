@@ -3,7 +3,7 @@ using UnityEngine;
 
 using GlobalGameJam.Data;
 
-namespace GlobalGameJam.Gameplay.Audience
+namespace GlobalGameJam.Gameplay
 {
     public class AudienceMember : MonoBehaviour, IInitializable
     {
