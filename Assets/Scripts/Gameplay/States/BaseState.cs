@@ -6,13 +6,15 @@ namespace GlobalGameJam.Gameplay.States
 {
     public class BaseState : MonoBehaviour, IInitializable
     {
-        public GameplayStateEnum State = GameplayStateEnum.Intro;
+        public virtual GameplayStateEnum State => GameplayStateEnum.Intro;
 
         protected event Action OnCompleted;
 
         public IEnumerator Initialize()
         {
             InitializeState();
+
+            gameObject.SetActive(false);
             yield break;
         }
         

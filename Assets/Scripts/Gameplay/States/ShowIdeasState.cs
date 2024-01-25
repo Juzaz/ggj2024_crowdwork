@@ -6,8 +6,10 @@ namespace GlobalGameJam.Gameplay.States
 {
     public class ShowIdeasState : BaseState
     {
+        public override GameplayStateEnum State => GameplayStateEnum.ShowIdeas;
+
         [Header("Duration")]
-        [Range(0.0f, 15.0f)] private float _sequenceLenght = 1.0f;
+        [SerializeField, Range(0.0f, 15.0f)] private float _sequenceLenght = 1.0f;
         private float _timer = 0.0f;
 
         private void OnEnable()

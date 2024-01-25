@@ -9,18 +9,15 @@ namespace GlobalGameJam.Gameplay
 {
     public class GameplayManager : MonoBehaviour
     {
-        [Header("Initialization")]
+        [Header("Initialization & Scene references")]
+
         [SerializeField] private GameObject _waitForInitialization = null;
-
-        [Header("States")]
-        [SerializeField] private GameObject _gameStateParent = null;
-        private List<BaseState> _gameStateList = new List<BaseState>();
-        private Dictionary<GameplayStateEnum, BaseState> _gameStateDictionary = new Dictionary<GameplayStateEnum, BaseState>();
-
-        [Header("Scene references etc.")]
         [SerializeField] private GameObject _audienceParent = null;
-        private List<AudienceMember> _audienceList = null;
+ 
+        private List<AudienceMember> _audienceList = new List<AudienceMember>();
+        private List<BaseState> _gameStateList = new List<BaseState>();
 
+        private Dictionary<GameplayStateEnum, BaseState> _gameStateDictionary = new Dictionary<GameplayStateEnum, BaseState>();
         private GameplayStateEnum _gameplayState = GameplayStateEnum.Intro;
 
         private void Awake()
@@ -35,7 +32,7 @@ namespace GlobalGameJam.Gameplay
                 yield return null;
             }
 
-            _gameStateList.AddRange(_gameStateParent.GetComponentsInChildren<BaseState>());
+            _gameStateList.AddRange(GetComponentsInChildren<BaseState>());
             _audienceList.AddRange(_audienceParent.GetComponentsInChildren<AudienceMember>());
 
             List<IInitializable> initializationList = new List<IInitializable>();
@@ -64,7 +61,7 @@ namespace GlobalGameJam.Gameplay
             _gameStateDictionary[_gameplayState].EndState();
 
             int gameplayState = (int)_gameplayState + 1;
-            if (gameplayState >= (int)GameplayStateEnum.AudienceAttributes)
+            if (gameplayState >= (int)GameplayStateEnum.Cleanup)
             {
                 _gameplayState = GameplayStateEnum.AudienceAttributes;
             }
@@ -80,8 +77,8 @@ namespace GlobalGameJam.Gameplay
 
             // Intro
             // Show Audience attributes
-
             // Show Ideas
+
             // Show force & angle
             // Shoot microphone
             // Collect Ideas

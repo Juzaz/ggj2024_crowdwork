@@ -6,5 +6,7 @@ namespace GlobalGameJam.Gameplay.States
 
         AudienceAttributes = 1,
         ShowIdeas = 2,
+
+        Cleanup = 3,
     }
 }

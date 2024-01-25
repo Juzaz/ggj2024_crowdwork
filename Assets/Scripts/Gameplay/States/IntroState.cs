@@ -6,8 +6,10 @@ namespace GlobalGameJam.Gameplay.States
 {
     public class IntroState : BaseState
     {
+        public override GameplayStateEnum State => GameplayStateEnum.Intro;
+
         [Header("Duration")]
-        [Range(0.0f, 15.0f)] private float _introSequenceLenght = 1.0f;
+        [SerializeField, Range(0.0f, 15.0f)] private float _introSequenceLenght = 1.0f;
         private float _introTimer = 0.0f;
 
         private void OnEnable()

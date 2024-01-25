@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace GlobalGameJam.Gameplay.States
 {
-    public class AudienceAttributesState : BaseState
+    public class CleanupState : BaseState
     {
-        public override GameplayStateEnum State => GameplayStateEnum.AudienceAttributes;
+        public override GameplayStateEnum State => GameplayStateEnum.Cleanup;
 
         [Header("Duration")]
         [SerializeField, Range(0.0f, 15.0f)] private float _sequenceLenght = 1.0f;

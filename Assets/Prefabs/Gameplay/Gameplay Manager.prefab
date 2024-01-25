@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &283048057999930924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 17997667280380682}
+  - component: {fileID: 1891242600667782173}
+  m_Layer: 2
+  m_Name: Cleanup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &17997667280380682
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283048057999930924}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5572518419648802163}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1891242600667782173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283048057999930924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e43f6c49bdc8f3d41b23ae46bdec3c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sequenceLenght: 1
 --- !u!1 &1621319169286273539
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,7 +54,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3202696012146988458}
-  - component: {fileID: 8731209690242520880}
+  - component: {fileID: 7858372030173286543}
   m_Layer: 2
   m_Name: Show Ideas
   m_TagString: Untagged
@@ -32,7 +77,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5572518419648802163}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8731209690242520880
+--- !u!114 &7858372030173286543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,10 +86,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1621319169286273539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee639b8a6d75b7545a58dfaf721b246d, type: 3}
+  m_Script: {fileID: 11500000, guid: 60f8c02b364122049a812a154b8015d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  State: 1
+  _sequenceLenght: 1
 --- !u!1 &1744937361787859529
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce1318c2ae0f034cbfa1982bdfc768d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  State: 0
+  _introSequenceLenght: 3
 --- !u!1 &6014669969681111703
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +168,7 @@ Transform:
   - {fileID: 6315986232451857669}
   - {fileID: 1318917970879579423}
   - {fileID: 3202696012146988458}
+  - {fileID: 17997667280380682}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8910105518836296131
@@ -184,4 +230,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee639b8a6d75b7545a58dfaf721b246d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  State: 1
+  _sequenceLenght: 5
