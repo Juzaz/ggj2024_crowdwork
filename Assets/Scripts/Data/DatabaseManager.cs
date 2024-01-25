@@ -43,7 +43,7 @@ namespace GlobalGameJam.Data
             List<JokeData> jokeList = new List<JokeData>();
             for (int i = 0; i < _jokeList.Count; i++)
             {
-                if (jokeList[i].IdeaCount == ideaCount)
+                if (_jokeList[i].IdeaCount == ideaCount)
                 {
                     jokeList.Add(_jokeList[i]);
                 }

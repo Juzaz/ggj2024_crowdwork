@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 using GlobalGameJam.Data;
@@ -10,6 +9,9 @@ namespace GlobalGameJam.Gameplay
     {
         [SerializeField] private SpriteRenderer _spriteRenderer = null;
 
+        private IdeaData _attachedIdea = null;
+        public IdeaData AttachedIdea => _attachedIdea;
+
         public IEnumerator Initialize()
         {
             gameObject.SetActive(false);
@@ -18,6 +20,8 @@ namespace GlobalGameJam.Gameplay
 
         public void SetIdea(IdeaData ideaData)
         {
+            _attachedIdea = ideaData;
+
             _spriteRenderer.sprite = ideaData.Texture;
             gameObject.SetActive(true);
         }

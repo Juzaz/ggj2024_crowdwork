@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using GlobalGameJam.Data;
 
 namespace GlobalGameJam.Gameplay
 {
@@ -15,6 +17,9 @@ namespace GlobalGameJam.Gameplay
         private Vector3 _force;
         private bool _forceAndAngleSet;
 
+        List<IdeaData> _collectedIdeas = new List<IdeaData>();
+        public IdeaData[] CollectedIdeas => _collectedIdeas.ToArray();
+
         private void OnEnable()
         {
             if (_startingPosition == Vector3.zero)
@@ -25,6 +30,8 @@ namespace GlobalGameJam.Gameplay
                 _launchAngle = Random.Range(0.0f, 1.0f);
                 _launchForce = Random.Range(1.0f, 5.0f);
             }
+
+            _collectedIdeas.Clear();
 
             _forceAndAngleSet = false;
             _force = new Vector3(_launchAngle, 1.0f, 0.0f) * _launchForce;
@@ -61,6 +68,7 @@ namespace GlobalGameJam.Gameplay
 
             if (collectedIdea != null)
             {
+                _collectedIdeas.Add(collectedIdea.AttachedIdea);
                 collectedIdea.gameObject.SetActive(false);
             }
         }

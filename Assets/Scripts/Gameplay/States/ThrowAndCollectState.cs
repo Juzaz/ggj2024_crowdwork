@@ -10,7 +10,7 @@ namespace GlobalGameJam.Gameplay.States
 
         [Header("References")]
         [SerializeField] private GameObject _ideasParent = null;
-        [SerializeField] private Animator _comicAnimator = null;
+        [SerializeField] private Animator _comedianAnimator = null;
         [SerializeField] private Microphone _microphone = null;
 
         private List<IdeaBubble> _ideaBubbles = new List<IdeaBubble>();
@@ -22,7 +22,7 @@ namespace GlobalGameJam.Gameplay.States
 
         protected override void EnableState()
         {
-            _comicAnimator.SetTrigger("Throw");
+            _comedianAnimator.SetTrigger("Throw");
             _microphone.gameObject.SetActive(true);
         }
 
