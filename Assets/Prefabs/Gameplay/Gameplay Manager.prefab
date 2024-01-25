@@ -458,6 +458,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _introSequenceLenght: 0.15
   _comedian: {fileID: 0}
+  _curtain: {fileID: 0}
+  _happyAudience:
+  - {fileID: 8300000, guid: d1cb148316d5a704eaf3e3b537559080, type: 3}
+  - {fileID: 8300000, guid: 2e4cc8c7b85da25499fa30bad1c8c56b, type: 3}
+  _neutralAudience:
+  - {fileID: 8300000, guid: 60efd904b5899b74b994df1c6dc0c405, type: 3}
+  - {fileID: 8300000, guid: 2e4cc8c7b85da25499fa30bad1c8c56b, type: 3}
+  _negativeAudience:
+  - {fileID: 8300000, guid: 37e5946c32f1efd40a16849a6988aeff, type: 3}
+  - {fileID: 8300000, guid: 489b549a9d63cbe4f88a62ee18239c85, type: 3}
 --- !u!1 &8561961452422272977
 GameObject:
   m_ObjectHideFlags: 0

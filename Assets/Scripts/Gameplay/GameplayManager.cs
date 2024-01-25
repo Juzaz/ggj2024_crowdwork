@@ -34,6 +34,7 @@ namespace GlobalGameJam.Gameplay
 
         public JokeData CurrentJoke { get; private set; }
         public IdeaData[] CurrentIdeas { get; private set; }
+        public int FinalScore => _currentScore;
 
         private void Awake()
         {
@@ -97,6 +98,15 @@ namespace GlobalGameJam.Gameplay
         {
             CurrentJoke = joke;
             CurrentIdeas = ideas != null ? ideas : new IdeaData[0];
+        }
+
+        public void ResetGame()
+        {
+            _currentRound = 1;
+            _currentScore = 0;
+
+            _roundText.SetText($"Round: {_currentRound}/{_maxRounds}");
+            _scoreText.SetText($"Score: {_currentScore}");
         }
 
         public void IncrementRound()
