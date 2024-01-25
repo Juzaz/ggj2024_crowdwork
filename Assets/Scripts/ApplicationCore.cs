@@ -27,6 +27,8 @@ namespace GlobalGameJam
             List<IInitializable> initializations = new List<IInitializable>();
             initializations.Add(new DatabaseManager());
 
+            initializations.AddRange(GetComponentsInChildren<IInitializable>());
+
             for (int i = 0; i < initializations.Count; i++)
             {
                 IEnumerator initialization = initializations[i].Initialize();

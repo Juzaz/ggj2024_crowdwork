@@ -42,7 +42,7 @@ namespace GlobalGameJam.Gameplay.States
             }
             else
             {
-                _comicAnimator.SetTrigger("Bad");
+                //_comicAnimator.SetTrigger("Bad");
 
                 _timeToEnd = 5.0f;
             }
