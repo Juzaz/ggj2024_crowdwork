@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7bb3637e6c1ad14db42aeb2e564b341, type: 3}
-  m_Name: idea_2
+  m_Name: idea_6
   m_EditorClassIdentifier: 
-  IdeaSpriteIndex: 2
+  IdeaSpriteIndex: 6
   Attributes:
-  - {fileID: 11400000, guid: f8d77c53d88dcd947993ff6e97c3dbcd, type: 2}
-  - {fileID: 11400000, guid: 1e096a92d1218264b922e030e740ca65, type: 2}
+  - {fileID: 11400000, guid: fc241b42e8e59a64485e2889df90e0be, type: 2}
+  - {fileID: 11400000, guid: 0f6bd2fb62555554aa5d7e23c8a36838, type: 2}
