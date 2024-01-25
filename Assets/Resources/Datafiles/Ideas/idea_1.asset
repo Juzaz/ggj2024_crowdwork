@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: idea_1
   m_EditorClassIdentifier: 
   IdeaSpriteIndex: 0
+  Texture: {fileID: 21300000, guid: dffef66376be4fa480fb02b19edbe903, type: 3}
   Attributes:
   - {fileID: 11400000, guid: fc241b42e8e59a64485e2889df90e0be, type: 2}
   - {fileID: 11400000, guid: c74d2ed7f53b1024b9c123559effdcb0, type: 2}
