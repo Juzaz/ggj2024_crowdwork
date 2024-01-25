@@ -19,6 +19,33 @@ namespace GlobalGameJam.Gameplay.States
         private List<AudienceMember> _audienceList = new List<AudienceMember>();
         private List<AttributeData> _attributes = new List<AttributeData>();
 
+        private int[] roundPosiveAttributes = new int[]
+            {
+                2,
+                3,
+                3,
+                3,
+                3
+            };
+
+        private int[] roundNegativeAttributes = new int[]
+            {
+                0,
+                1,
+                1,
+                2,
+                2
+            };
+
+        private int[] roundNegativePeople = new int[]
+            {
+                0,
+                1,
+                1,
+                3,
+                4
+            };
+
         protected override void InitializeState()
         {
             _attributes = DatabaseManager.Instance.Attributes;
@@ -29,20 +56,37 @@ namespace GlobalGameJam.Gameplay.States
         {
             _timer = 0.0f;
 
+            int currentRount = _gameplayManager.CurrentRound - 1;
+            int positiveAttributeCount = roundPosiveAttributes[currentRount];
+            int negativeAttributeCount = roundNegativeAttributes[currentRount];
+            int negativePeople = roundNegativePeople[currentRount];
+
+            List<AttributeData> tempList = new List<AttributeData>(_attributes);
+            List<AttributeData> _possiblePosiveAttributes = new List<AttributeData>();
+            List<AttributeData> _possibleNegativeAttributes = new List<AttributeData>();
+
+            for (int i = 0; i < positiveAttributeCount; i++)
+            {
+                AttributeData attribute = tempList[Random.Range(0, tempList.Count)];
+                tempList.Remove(attribute);
+
+                _possiblePosiveAttributes.Add(attribute);
+            }
+
+            for (int i = 0; i < negativeAttributeCount; i++)
+            {
+                AttributeData attribute = tempList[Random.Range(0, tempList.Count)];
+                tempList.Remove(attribute);
+
+                _possibleNegativeAttributes.Add(attribute);
+            }
+ 
             for (int i = 0; i < _audienceList.Count; i++)
             {
-                AttributeData likedAttribute = null;
-                AttributeData hatedAttribute = null;
+                AttributeData likedAttribute = _possiblePosiveAttributes[Random.Range(0, _possiblePosiveAttributes.Count)];
+                AttributeData hatedAttribute = (Random.Range(0, 101) > 80 && negativePeople > 0) ? _possibleNegativeAttributes[Random.Range(0, _possibleNegativeAttributes.Count)] : null;
 
-                List<AttributeData> tempList = new List<AttributeData>(_attributes);
-
-                int randomID = Random.Range(0, tempList.Count);
-                likedAttribute = tempList[randomID];
-                tempList.RemoveAt(randomID);
-
-                randomID = Random.Range(0, tempList.Count);
-                hatedAttribute = tempList[randomID];
-
+                if (hatedAttribute != null) negativePeople--;
                 _audienceList[i].ShowAttributes(likedAttribute, hatedAttribute);
             }
         }

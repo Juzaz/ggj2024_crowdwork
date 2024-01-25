@@ -58,7 +58,7 @@ namespace GlobalGameJam.Gameplay.States
             {
                 jokeAttributes.AddRange(currentIdeas[i].Attributes);
             }
-            punchlineAttribute = jokeAttributes.Count > 0 ? jokeAttributes[jokeAttributes.Count - 1] : null;
+            //punchlineAttribute = jokeAttributes.Count > 0 ? jokeAttributes[jokeAttributes.Count - 1] : null;
 
             int jokeScore = 0;
             int satisfiedAudienceMembers = 0;
@@ -69,15 +69,15 @@ namespace GlobalGameJam.Gameplay.States
                 likedAttributes.Add(_audienceList[i].LikedAttribute);
                 hatedAttributes.Add(_audienceList[i].HatedAttribute);
 
-                if (punchlineAttribute == _audienceList[i].LikedAttribute)
+                if (jokeAttributes.Contains(_audienceList[i].HatedAttribute))
                 {
-                    satisfiedAudienceMembers++;
-                    _audienceList[i].Laugh();
-                }
-                else if (punchlineAttribute == _audienceList[i].HatedAttribute)
-                {
-                    dissatisfiedAudienceMembers++;
                     _audienceList[i].Boo();
+                    dissatisfiedAudienceMembers++;
+                }
+                else if (jokeAttributes.Contains(_audienceList[i].LikedAttribute))
+                {
+                    _audienceList[i].Laugh();
+                    satisfiedAudienceMembers++;
                 }
                 else
                 {
@@ -110,7 +110,7 @@ namespace GlobalGameJam.Gameplay.States
             AudioClip satisfiedAudio = null;
             AudioClip dissatisfiedAudio = null;
 
-            if (satisfiedAudienceMembers >= 10)
+            if (satisfiedAudienceMembers >= 12)
             {
                 satisfiedAudio = getRandomAudioFromList(_bigGoodResponses);
             }
@@ -118,7 +118,7 @@ namespace GlobalGameJam.Gameplay.States
             {
                 satisfiedAudio = getRandomAudioFromList(_moderateGoodResponses);
             }
-            else if (satisfiedAudienceMembers >= 4)
+            else if (satisfiedAudienceMembers >= 5)
             {
                 satisfiedAudio = getRandomAudioFromList(_smallGoodResponses);
             }
@@ -127,21 +127,21 @@ namespace GlobalGameJam.Gameplay.States
                 satisfiedAudio = getRandomAudioFromList(_tinyGoodResponses);
             }
 
-            if (dissatisfiedAudienceMembers >= 10)
+            if (dissatisfiedAudienceMembers >= 3)
             {
-                    dissatisfiedAudio = getRandomAudioFromList(_bigBadResponses);
+                dissatisfiedAudio = getRandomAudioFromList(_bigBadResponses);
             }
-            else if (dissatisfiedAudienceMembers >= 8)
+            else if (dissatisfiedAudienceMembers >= 2)
             {
-                    dissatisfiedAudio = getRandomAudioFromList(_moderateBadResponses);
-            }
-            else if (dissatisfiedAudienceMembers >= 4)
-            {
-                    dissatisfiedAudio = getRandomAudioFromList(_smallBadResponses);
+                dissatisfiedAudio = getRandomAudioFromList(_moderateBadResponses);
             }
             else if (dissatisfiedAudienceMembers >= 1)
             {
-                    dissatisfiedAudio = getRandomAudioFromList(_tinyBadResponses);
+                dissatisfiedAudio = getRandomAudioFromList(_smallBadResponses);
+            }
+            else if (dissatisfiedAudienceMembers >= 0)
+            {
+                dissatisfiedAudio = getRandomAudioFromList(_tinyBadResponses);
             }
 
             _delayLenght = 0.0f;
@@ -171,11 +171,11 @@ namespace GlobalGameJam.Gameplay.States
                     }
                 }
 
-                if (jokeScore > 0)
+                if (jokeScore > 4)
                 {
                     _comedian.SetTrigger("Good");
                 }
-                else if (jokeScore < 0)
+                else if (jokeScore <= 0)
                 {
                     _comedian.SetTrigger("Bad");
                 }

@@ -407,8 +407,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 6796251554619222287}
-  _likedSpriteRenderer: {fileID: 2086193981361248687}
-  _hatedSpriteRenderer: {fileID: 657770094686851604}
+  _likedSpriteRenderer: {fileID: 2192172462520239522}
+  _hatedSpriteRenderer: {fileID: 5903488583515383202}
 --- !u!1 &6744425943594175195
 GameObject:
   m_ObjectHideFlags: 0

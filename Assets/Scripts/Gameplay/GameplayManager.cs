@@ -34,6 +34,7 @@ namespace GlobalGameJam.Gameplay
 
         public JokeData CurrentJoke { get; private set; }
         public IdeaData[] CurrentIdeas { get; private set; }
+        public int CurrentRound => _currentRound;
         public int FinalScore => _currentScore;
 
         private void Awake()

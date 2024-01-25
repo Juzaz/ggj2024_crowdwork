@@ -93,6 +93,7 @@ namespace GlobalGameJam.Gameplay.States
                 _failed = false;
                 _comicAnimator.SetTrigger("Missed");
 
+                _gameplayManager.SetToldJoke(null, null);
                 AudioManager.Instance.PlaySFX(_missedJoke);
                 _timeToEnd = _missedJoke.length;
             }
