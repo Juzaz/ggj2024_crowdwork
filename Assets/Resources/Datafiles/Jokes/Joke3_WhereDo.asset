@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c8047eea037bd4bbf3a12df67ad9f4, type: 3}
   m_Name: Joke3_WhereDo
   m_EditorClassIdentifier: 
-  Joke: "Where do \xA7\u2019s \xA7 come from? The \xA7!"
+  Joke: "Where do \xA7's \xA7 come from? The \xA7!"
   Audio: {fileID: 8300000, guid: f64821b79b15f824b9c5b29a6c7a523b, type: 3}
