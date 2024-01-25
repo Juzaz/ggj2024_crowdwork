@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 2031816629327969464}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.028845334, y: 0.001696788, z: 0}
-  m_LocalScale: {x: 0.8483923, y: 0.8483923, z: 0.8483923}
+  m_LocalPosition: {x: 0.139, y: -0.07752492, z: 0}
+  m_LocalScale: {x: 1.6853242, y: 1.6853242, z: 1.6853242}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1524291457926791118}
@@ -70,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -420512131
+  m_SortingLayer: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: 824494107, guid: 6d3103b336143a64585d41b3221f56ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &4519266572513762591
@@ -155,9 +155,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -420512131
+  m_SortingLayer: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: f6909e2891ade444b9f0918a4094dd5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -216,8 +216,8 @@ Transform:
   m_GameObject: {fileID: 4633792547335335534}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03199999, y: -0.0109999925, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.084, y: -0.108, z: 0}
+  m_LocalScale: {x: 1.9864917, y: 1.9864917, z: 1.9864917}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8829024068771295483}
@@ -260,9 +260,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -420512131
+  m_SortingLayer: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1409762413, guid: 6d3103b336143a64585d41b3221f56ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -271,7 +271,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &5292455255468533268
@@ -300,8 +300,8 @@ Transform:
   m_GameObject: {fileID: 5292455255468533268}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.132, y: 0.16, z: 0}
-  m_LocalScale: {x: 1.1787, y: 1.1787, z: 1.1787}
+  m_LocalPosition: {x: -0.197, y: 0.18, z: 0}
+  m_LocalScale: {x: 0.5933576, y: 0.5933576, z: 0.5933576}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8987136788385655383}
@@ -345,8 +345,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -420512131
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 868398295, guid: 84759280f91420840a6286593871687c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -435,8 +435,8 @@ Transform:
   m_GameObject: {fileID: 6744425943594175195}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.241, y: 0.013, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.254, y: 0.054, z: 0}
+  m_LocalScale: {x: 0.5034, y: 0.5034, z: 0.5034}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6776275918361721184}
@@ -480,8 +480,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -420512131
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 968950566, guid: 84759280f91420840a6286593871687c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
