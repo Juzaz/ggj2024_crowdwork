@@ -6,6 +6,7 @@ namespace GlobalGameJam.Data
     public class JokeData : ScriptableObject, IInitializableData
     {
         public string Joke = "";
+        public AudioClip Audio = null;
 
         // runtime
         public string[] SplittedJoke { get; private set; }

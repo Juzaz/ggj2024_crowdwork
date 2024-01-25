@@ -60,7 +60,6 @@ namespace GlobalGameJam.Gameplay.States
             }
 
             _sequenceWait = true;
-            _comicAnimator.SetTrigger("Spinning");
         }
 
         protected override void DisableState()
@@ -77,6 +76,7 @@ namespace GlobalGameJam.Gameplay.States
                 {
                     forceControls.gameObject.SetActive(true);
                     _sequenceWait = false;
+                    _comicAnimator.SetTrigger("Spinning");
                 }
             }
             else

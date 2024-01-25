@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+using GlobalGameJam.Audio;
 using GlobalGameJam.Data;
 
 namespace GlobalGameJam.Gameplay.States
@@ -16,6 +17,14 @@ namespace GlobalGameJam.Gameplay.States
         [SerializeField] private Animator _comicAnimator = null;
         [SerializeField] private TMP_Text _jokeText = null;
 
+        [Header("Audio")]
+        [SerializeField] private AudioClip[] _drumrolls = null;
+        [SerializeField] private AudioClip _missedJoke = null;
+
+        JokeData _jokeData = null;
+        string _jokeToTell = null;
+        AudioClip _drumrollClip = null;
+        float _drumrollLenght = 1.0f;
         float _timeToEnd = 1.0f;
 
         protected override void InitializeState()
@@ -25,6 +34,10 @@ namespace GlobalGameJam.Gameplay.States
 
         protected override void EnableState()
         {
+            _drumrollClip = null;
+            _jokeData = null;
+            _jokeToTell = string.Empty;
+
             IdeaData[] ideas = microphone.CollectedIdeas;
             int jokeIdeaCount = ideas.Length;
 
@@ -32,21 +45,21 @@ namespace GlobalGameJam.Gameplay.States
 
             if (jokes.Count != 0)
             {
-                JokeData _joke = jokes[Random.Range(0, jokes.Count)];
-                _jokeText.SetText(_joke.GetJoke(ideas));
+                _drumrollClip = _drumrolls[Random.Range(0, _drumrolls.Length)];
+                _drumrollLenght = _drumrollClip.length + 0.25f;
 
-                _jokeText.transform.parent.gameObject.SetActive(true);
-                _comicAnimator.SetTrigger("Joke");
+                AudioManager.Instance.PlaySFX(_drumrollClip);
 
-                _timeToEnd = 10.0f;
+                _jokeData = jokes[Random.Range(0, jokes.Count)];
+                _jokeToTell = _jokeData.GetJoke(ideas);
             }
             else
             {
-                //_comicAnimator.SetTrigger("Bad");
+                _comicAnimator.SetTrigger("Missed");
 
-                _timeToEnd = 5.0f;
+                AudioManager.Instance.PlaySFX(_missedJoke);
+                _timeToEnd = _missedJoke.length + 0.5f;
             }
-            
         }
 
         protected override void DisableState()
@@ -56,6 +69,23 @@ namespace GlobalGameJam.Gameplay.States
 
         private void Update()
         {
+            if (_jokeData != null)
+            {
+                _drumrollLenght -= Time.deltaTime;
+                if (_drumrollLenght > 0.0f) return;
+
+                _jokeText.SetText(_jokeToTell);
+                _jokeText.transform.parent.gameObject.SetActive(true);
+
+                _comicAnimator.SetTrigger("Joke");
+
+                AudioManager.Instance.PlaySFX(_jokeData.Audio);
+                _timeToEnd = _jokeData.Audio.length + 1.5f;
+
+                _jokeData = null;
+                return;
+            }
+
             _timeToEnd -= Time.deltaTime;
             if (_timeToEnd <= 0.0f)
             {

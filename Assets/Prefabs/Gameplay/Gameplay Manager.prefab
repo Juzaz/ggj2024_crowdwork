@@ -192,7 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _introSequenceLenght: 1.25
   _comedian: {fileID: 0}
-  _music: {fileID: 8300000, guid: 5ccebd32ea7f8584cbaa316461acbc35, type: 3}
+  _music: {fileID: 8300000, guid: 6ed3986019332ec41b211c3f86779ca7, type: 3}
 --- !u!1 &5870129734240586875
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _introSequenceLenght: 1
   _comedian: {fileID: 0}
+  _goodResponse: {fileID: 8300000, guid: 68397953c7c982b419bc5658d60aebb0, type: 3}
 --- !u!1 &6014669969681111703
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,3 +482,8 @@ MonoBehaviour:
   microphone: {fileID: 0}
   _comicAnimator: {fileID: 0}
   _jokeText: {fileID: 0}
+  _drumrolls:
+  - {fileID: 8300000, guid: b7b0e8f781da0274ba4bd3c32329d629, type: 3}
+  - {fileID: 8300000, guid: 25a129bf43ddeed499b83f4afd5a591e, type: 3}
+  _tellingJoke: {fileID: 8300000, guid: aff85db64f3659f4eb92cbecea86fa53, type: 3}
+  _missedJoke: {fileID: 8300000, guid: 00574ce25cd6b7a43aa3d07231970c04, type: 3}
