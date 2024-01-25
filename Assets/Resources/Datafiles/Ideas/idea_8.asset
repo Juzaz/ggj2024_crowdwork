@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: idea_8
   m_EditorClassIdentifier: 
   IdeaSpriteIndex: 8
-  Texture: {fileID: 21300020, guid: dffef66376be4fa480fb02b19edbe903, type: 3}
+  Texture: {fileID: -1009535905, guid: aab8e3050693f1e44b4c7b46074c3ab9, type: 3}
   Attributes:
   - {fileID: 11400000, guid: f8d77c53d88dcd947993ff6e97c3dbcd, type: 2}
   - {fileID: 11400000, guid: 9ba557ed7ef7bce47b1c8af7597c848e, type: 2}
