@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7bb3637e6c1ad14db42aeb2e564b341, type: 3}
-  m_Name: idea_8
+  m_Name: idea_18
   m_EditorClassIdentifier: 
-  IdeaSpriteIndex: 7
-  Texture: {fileID: -1009535905, guid: aab8e3050693f1e44b4c7b46074c3ab9, type: 3}
+  IdeaSpriteIndex: 17
+  Texture: {fileID: -2127617513, guid: aab8e3050693f1e44b4c7b46074c3ab9, type: 3}
   Attributes:
-  - {fileID: 11400000, guid: f8d152f4733163f4e84e44ed28e3f2fa, type: 2}
+  - {fileID: 11400000, guid: c74d2ed7f53b1024b9c123559effdcb0, type: 2}

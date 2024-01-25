@@ -15,5 +15,4 @@ MonoBehaviour:
   IdeaSpriteIndex: 6
   Texture: {fileID: -1701561218, guid: aab8e3050693f1e44b4c7b46074c3ab9, type: 3}
   Attributes:
-  - {fileID: 11400000, guid: c74d2ed7f53b1024b9c123559effdcb0, type: 2}
-  - {fileID: 11400000, guid: f8d152f4733163f4e84e44ed28e3f2fa, type: 2}
+  - {fileID: 11400000, guid: 1e096a92d1218264b922e030e740ca65, type: 2}

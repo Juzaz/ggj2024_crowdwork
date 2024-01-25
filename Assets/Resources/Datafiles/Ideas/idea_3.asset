@@ -16,4 +16,3 @@ MonoBehaviour:
   Texture: {fileID: -12382454, guid: aab8e3050693f1e44b4c7b46074c3ab9, type: 3}
   Attributes:
   - {fileID: 11400000, guid: c74d2ed7f53b1024b9c123559effdcb0, type: 2}
-  - {fileID: 11400000, guid: 3ebd302a4033dce45b1e581e17807cbf, type: 2}

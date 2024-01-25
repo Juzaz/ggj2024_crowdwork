@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 904c6147a77ece648b40d99d56bb3d99, type: 3}
-  m_Name: attribute_cyan
+  m_Script: {fileID: 11500000, guid: c7bb3637e6c1ad14db42aeb2e564b341, type: 3}
+  m_Name: idea_11
   m_EditorClassIdentifier: 
-  Attribute: {fileID: -16487183, guid: 6d3103b336143a64585d41b3221f56ad, type: 3}
+  IdeaSpriteIndex: 10
+  Texture: {fileID: 1266798318, guid: aab8e3050693f1e44b4c7b46074c3ab9, type: 3}
+  Attributes:
+  - {fileID: 11400000, guid: f8d152f4733163f4e84e44ed28e3f2fa, type: 2}
