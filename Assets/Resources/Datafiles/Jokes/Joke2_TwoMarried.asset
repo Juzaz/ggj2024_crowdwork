@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c8047eea037bd4bbf3a12df67ad9f4, type: 3}
   m_Name: Joke2_TwoMarried
   m_EditorClassIdentifier: 
-  Joke: "Two \xA7s got married. The \xA7 was fantastic."
+  Joke: "Two \xA7 got married. The \xA7 was fantastic."
   Audio: {fileID: 8300000, guid: 33e6596a4d79eed4c871682a07dab19f, type: 3}

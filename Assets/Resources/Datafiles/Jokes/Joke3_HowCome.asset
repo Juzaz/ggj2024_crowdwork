@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c8047eea037bd4bbf3a12df67ad9f4, type: 3}
   m_Name: Joke3_HowCome
   m_EditorClassIdentifier: 
-  Joke: "How come when it\u2019s us, it\u2019s a \xA7, but when it\u2019s \xA7s,
-    it\u2019s a \xA7?"
+  Joke: "How come when it\u2019s us, it\u2019s a \xA7, but when it\u2019s \xA7, it\u2019s
+    a \xA7?"
   Audio: {fileID: 8300000, guid: 2b9eeae2cc1cdad4a8804aa8ee03f9fa, type: 3}

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c8047eea037bd4bbf3a12df67ad9f4, type: 3}
   m_Name: Joke2_Are
   m_EditorClassIdentifier: 
-  Joke: "\xA7s are \xA7s."
+  Joke: "\xA7 are \xA7."
   Audio: {fileID: 8300000, guid: b42823f669259fb4f8fee34f870e45c5, type: 3}

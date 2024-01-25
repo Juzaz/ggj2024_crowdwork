@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c8047eea037bd4bbf3a12df67ad9f4, type: 3}
   m_Name: Joke3_TheDeal01
   m_EditorClassIdentifier: 
-  Joke: "What's the deal with \xA7s? Is it a \xA7 or is it a \xA7?"
+  Joke: "What's the deal with \xA7? Is it a \xA7 or is it a \xA7?"
   Audio: {fileID: 8300000, guid: 222210983a38a5d4880e7475e6b4ca4a, type: 3}
