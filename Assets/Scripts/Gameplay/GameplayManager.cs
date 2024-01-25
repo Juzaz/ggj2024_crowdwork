@@ -13,7 +13,7 @@ namespace GlobalGameJam.Gameplay
 
         [SerializeField] private GameObject _waitForInitialization = null;
         [SerializeField] private GameObject _audienceParent = null;
- 
+
         private List<AudienceMember> _audienceList = new List<AudienceMember>();
         private List<BaseState> _gameStateList = new List<BaseState>();
 
@@ -66,7 +66,7 @@ namespace GlobalGameJam.Gameplay
             }
             else
             {
-                _gameplayState = (GameplayStateEnum)(_gameplayState + 1);
+                _gameplayState = _gameplayState + 1;
             }
 
             _gameStateDictionary[_gameplayState].StartState(onGameStateFinished);

@@ -1,6 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using GlobalGameJam.Data;
+using GlobalGameJam.Gameplay.Audience;
 
 namespace GlobalGameJam.Gameplay.States
 {
@@ -12,14 +14,38 @@ namespace GlobalGameJam.Gameplay.States
         [SerializeField, Range(0.0f, 15.0f)] private float _sequenceLenght = 1.0f;
         private float _timer = 0.0f;
 
-        private void OnEnable()
+        [Header("Scene references")]
+        [SerializeField] private GameObject _audienceParent = null;
+
+        private List<AudienceMember> _audienceList = new List<AudienceMember>();
+        private List<AttributeData> _attributes = new List<AttributeData>();
+
+        protected override void InitializeState()
         {
-            _timer = 0.0f;
+            _attributes = DatabaseManager.Instance.Attributes;
+            _audienceList.AddRange(_audienceParent.GetComponentsInChildren<AudienceMember>());
         }
 
-        private void OnDisable()
+        protected override void EnableState()
         {
+            _timer = 0.0f;
 
+            AttributeData likedAttribute = null;
+            AttributeData hatedAttribute = null;
+
+            List<AttributeData> tempList = new List<AttributeData>(_attributes);
+
+            int randomID = Random.Range(0, tempList.Count);
+            likedAttribute = tempList[randomID];
+            tempList.RemoveAt(randomID);
+
+            randomID = Random.Range(0, tempList.Count);
+            hatedAttribute = tempList[randomID];
+
+            for (int i = 0; i < _audienceList.Count; i++)
+            {
+                _audienceList[i].ShowAttributes(likedAttribute, hatedAttribute);
+            }
         }
 
         private void Update()

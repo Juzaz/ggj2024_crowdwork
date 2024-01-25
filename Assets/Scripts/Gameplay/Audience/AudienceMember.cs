@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 using GlobalGameJam.Data;
@@ -8,26 +7,37 @@ namespace GlobalGameJam.Gameplay.Audience
 {
     public class AudienceMember : MonoBehaviour, IInitializable
     {
-        [Header("Attributes")]
-        [SerializeField] private GameObject _attributeParent = null;
-        [SerializeField] private SpriteRenderer _attributeSprite = null;
+        [Header("References")]
+        [SerializeField] private Animator _animator = null;
+        [SerializeField] private SpriteRenderer _likedSpriteRenderer = null;
+        [SerializeField] private SpriteRenderer _hatedSpriteRenderer = null;
+
+        private AttributeData _likedAttribute = null;
+        private AttributeData _hatedAttribute = null;
 
         public IEnumerator Initialize()
         {
-            _attributeParent.SetActive(false);
+            HideAttributes();
 
             yield break;
         }
 
-        public void ShowAttribute(AttributeData attribute)
+        public void ShowAttributes(AttributeData likedAttribute, AttributeData hatedAttribute)
         {
-            _attributeSprite.sprite = attribute.Attribute;
-            _attributeParent.SetActive(true);
+            _likedAttribute = likedAttribute;
+            _hatedAttribute = hatedAttribute;
+
+            _likedSpriteRenderer.sprite = _likedAttribute.Attribute;
+            _hatedSpriteRenderer.sprite = _hatedAttribute.Attribute;
+
+            _likedSpriteRenderer.gameObject.SetActive(true);
+            _hatedSpriteRenderer.gameObject.SetActive(true);
         }
 
-        public void HideAttribute()
+        public void HideAttributes()
         {
-            _attributeParent.SetActive(false);
+            _likedSpriteRenderer.gameObject.SetActive(false);
+            _hatedSpriteRenderer.gameObject.SetActive(false);
         }
 
         public void Laugh()

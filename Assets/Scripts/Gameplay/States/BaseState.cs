@@ -8,25 +8,33 @@ namespace GlobalGameJam.Gameplay.States
     {
         public virtual GameplayStateEnum State => GameplayStateEnum.Intro;
 
-        protected event Action OnCompleted;
+        protected event Action _onCompleted = null;
+        protected bool _isInitialized = false;
 
         public IEnumerator Initialize()
         {
             InitializeState();
 
             gameObject.SetActive(false);
+            _isInitialized = true;
             yield break;
         }
         
-        protected virtual void InitializeState()
+        private void OnEnable()
         {
+            if (!_isInitialized) return;
+            EnableState();
+        }
 
+        private void OnDisable()
+        {
+            if (!_isInitialized) return;
+            DisableState();
         }
 
         public void StartState(Action onComplete)
         {
-            Debug.Log($"Starting {State}");
-            OnCompleted = onComplete;
+            _onCompleted = onComplete;
 
             gameObject.SetActive(true);
         }
@@ -35,11 +43,16 @@ namespace GlobalGameJam.Gameplay.States
         {
             if (!gameObject.activeSelf) return;
 
-            Debug.Log($"Ending {State}");
             gameObject.SetActive(false);
 
-            OnCompleted?.Invoke();
-            OnCompleted = null;
+            _onCompleted?.Invoke();
+            _onCompleted = null;
         }
+
+        protected virtual void InitializeState() { }
+
+        protected virtual void EnableState() { }
+
+        protected virtual void DisableState() { }
     }
 }
