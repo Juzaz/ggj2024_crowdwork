@@ -12,12 +12,12 @@ namespace GlobalGameJam.Gameplay.States
         [SerializeField, Range(0.0f, 15.0f)] private float _sequenceLenght = 1.0f;
         private float _timer = 0.0f;
 
-        private void OnEnable()
+        protected override void EnableState()
         {
             _timer = 0.0f;
         }
 
-        private void OnDisable()
+        protected override void DisableState()
         {
 
         }

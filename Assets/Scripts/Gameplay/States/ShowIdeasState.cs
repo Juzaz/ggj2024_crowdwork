@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using GlobalGameJam.Data;
+
 namespace GlobalGameJam.Gameplay.States
 {
     public class ShowIdeasState : BaseState
@@ -12,14 +14,21 @@ namespace GlobalGameJam.Gameplay.States
         [SerializeField, Range(0.0f, 15.0f)] private float _sequenceLenght = 1.0f;
         private float _timer = 0.0f;
 
-        private void OnEnable()
+        [Header("Ideas")]
+        [SerializeField] private int _minIdeaCount = 5;
+        [SerializeField] private int _maxIdeaCount = 10;
+
+        protected override void EnableState()
         {
             _timer = 0.0f;
-        }
 
-        private void OnDisable()
-        {
+            List<IdeaData> ideaList = DatabaseManager.Instance.Ideas;
+            int _ideaAmount = Random.Range(_minIdeaCount, _maxIdeaCount + 1);
 
+            for (int i = 0; i < _ideaAmount; i++)
+            {
+
+            }
         }
 
         private void Update()

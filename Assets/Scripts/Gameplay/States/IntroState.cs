@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace GlobalGameJam.Gameplay.States
@@ -12,14 +10,18 @@ namespace GlobalGameJam.Gameplay.States
         [SerializeField, Range(0.0f, 15.0f)] private float _introSequenceLenght = 1.0f;
         private float _introTimer = 0.0f;
 
-        private void OnEnable()
+        [Header("Scene references")]
+        [SerializeField] private Animator _comedian = null;
+
+        protected override void EnableState()
         {
             _introTimer = 0.0f;
+            _comedian.speed = 0.0f;
         }
 
-        private void OnDisable()
+        protected override void DisableState()
         {
-            
+            _comedian.speed = 1.0f;
         }
 
         private void Update()
