@@ -223,6 +223,10 @@ PrefabInstance:
       propertyPath: _comedian
       value: 
       objectReference: {fileID: 600068545}
+    - target: {fileID: 4693708245447362316, guid: afe4ecd899c4852499587952266c2c83, type: 3}
+      propertyPath: _audienceParent
+      value: 
+      objectReference: {fileID: 6617347435580425264}
     - target: {fileID: 5572518419648802163, guid: afe4ecd899c4852499587952266c2c83, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

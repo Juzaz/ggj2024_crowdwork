@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e43f6c49bdc8f3d41b23ae46bdec3c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sequenceLenght: 1
+  _sequenceLenght: 0.15
   _comedian: {fileID: 0}
 --- !u!1 &1351771012125911727
 GameObject:
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa331f483c776746a0f5ec9c3ab4b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _introSequenceLenght: 1
+  _introSequenceLenght: 0.15
   _comedian: {fileID: 0}
 --- !u!1 &1621319169286273539
 GameObject:
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f8c02b364122049a812a154b8015d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sequenceLenght: 1.5
+  _sequenceLenght: 0.25
   _ideasParent: {fileID: 0}
   _minIdeaCount: 4
   _maxIdeaCount: 8
@@ -238,7 +238,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _comedian: {fileID: 0}
-  _goodResponse: {fileID: 8300000, guid: 68397953c7c982b419bc5658d60aebb0, type: 3}
+  _audienceParent: {fileID: 0}
+  _bigGoodResponses: []
+  _moderateGoodResponses: []
+  _smallGoodResponses: []
+  _neutralResponses: []
+  _smallBadResponses: []
+  _moderateBadResponses: []
+  _bigBadResponses: []
 --- !u!1 &6014669969681111703
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee639b8a6d75b7545a58dfaf721b246d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sequenceLenght: 5
+  _sequenceLenght: 2.5
   _audienceParent: {fileID: 0}
 --- !u!1 &8354950796041219570
 GameObject:
@@ -432,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9f051ca84cb7c439b5b47f9d4fc8c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _introSequenceLenght: 1
+  _introSequenceLenght: 0.15
   _comedian: {fileID: 0}
 --- !u!1 &8561961452422272977
 GameObject:

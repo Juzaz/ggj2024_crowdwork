@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using GlobalGameJam.Data;
 using GlobalGameJam.Gameplay.States;
 
 namespace GlobalGameJam.Gameplay
@@ -20,6 +21,9 @@ namespace GlobalGameJam.Gameplay
 
         private Dictionary<GameplayStateEnum, BaseState> _gameStateDictionary = new Dictionary<GameplayStateEnum, BaseState>();
         private GameplayStateEnum _gameplayState = GameplayStateEnum.Intro;
+
+        public JokeData CurrentJoke { get; private set; }
+        public IdeaData[] CurrentIdeas { get; private set; }
 
         private void Awake()
         {
@@ -52,7 +56,7 @@ namespace GlobalGameJam.Gameplay
 
             for (int i = 0; i < _gameStateList.Count; i++)
             {
-                Debug.Log("state: " + _gameStateList[i].State);
+                _gameStateList[i].SetReferences(this);
                 _gameStateDictionary.Add(_gameStateList[i].State, _gameStateList[i]);
             }
 
@@ -74,6 +78,12 @@ namespace GlobalGameJam.Gameplay
             }
 
             _gameStateDictionary[_gameplayState].StartState(onGameStateFinished);
+        }
+
+        public void SetToldJoke(JokeData joke, IdeaData[] ideas)
+        {
+            CurrentJoke = joke;
+            CurrentIdeas = ideas;
         }
     }
 }

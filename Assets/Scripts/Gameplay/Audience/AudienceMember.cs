@@ -7,6 +7,9 @@ namespace GlobalGameJam.Gameplay
 {
     public class AudienceMember : MonoBehaviour, IInitializable
     {
+        public AttributeData LikedAttribute => _likedAttribute;
+        public AttributeData HatedAttribute => _hatedAttribute;
+
         [Header("References")]
         [SerializeField] private Animator _animator = null;
         [SerializeField] private SpriteRenderer _likedSpriteRenderer = null;

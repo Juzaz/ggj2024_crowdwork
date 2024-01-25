@@ -8,6 +8,7 @@ namespace GlobalGameJam.Gameplay.States
     {
         public virtual GameplayStateEnum State => GameplayStateEnum.Intro;
 
+        protected GameplayManager _gameplayManager = null;
         protected event Action _onCompleted = null;
         protected bool _isInitialized = false;
 
@@ -18,6 +19,11 @@ namespace GlobalGameJam.Gameplay.States
             gameObject.SetActive(false);
             _isInitialized = true;
             yield break;
+        }
+
+        public void SetReferences(GameplayManager gameplayManager)
+        {
+            _gameplayManager = gameplayManager;
         }
         
         private void OnEnable()

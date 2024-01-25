@@ -40,14 +40,14 @@ namespace GlobalGameJam.Gameplay.States
             _jokeToTell = string.Empty;
 
             IdeaData[] ideas = microphone.CollectedIdeas;
-            int jokeIdeaCount = ideas.Length;
+            int jokeIdeaCount = Mathf.Min(4, ideas.Length);
 
             List<JokeData> jokes = DatabaseManager.Instance.GetJokesWithIdeaCount(jokeIdeaCount);
 
             if (jokes.Count != 0)
             {
                 _drumrollClip = _drumrolls[Random.Range(0, _drumrolls.Length)];
-                _drumrollLenght = _drumrollClip.length + 0.25f;
+                _drumrollLenght = _drumrollClip.length;
 
                 AudioManager.Instance.PlaySFX(_drumrollClip);
 
@@ -59,7 +59,7 @@ namespace GlobalGameJam.Gameplay.States
                 _comicAnimator.SetTrigger("Missed");
 
                 AudioManager.Instance.PlaySFX(_missedJoke);
-                _timeToEnd = _missedJoke.length + 0.5f;
+                _timeToEnd = _missedJoke.length;
             }
         }
 
@@ -82,8 +82,9 @@ namespace GlobalGameJam.Gameplay.States
 
                 AudioClip joke = _jokeData.Audio != null ? _jokeData.Audio : _defaultJoke;
                 AudioManager.Instance.PlaySFX(_jokeData.Audio);
-                _timeToEnd = _jokeData.Audio.length + 1.5f;
+                _timeToEnd = _jokeData.Audio.length;
 
+                _gameplayManager.SetToldJoke(_jokeData, microphone.CollectedIdeas);
                 _jokeData = null;
                 return;
             }

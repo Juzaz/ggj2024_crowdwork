@@ -29,20 +29,20 @@ namespace GlobalGameJam.Gameplay.States
         {
             _timer = 0.0f;
 
-            AttributeData likedAttribute = null;
-            AttributeData hatedAttribute = null;
-
-            List<AttributeData> tempList = new List<AttributeData>(_attributes);
-
-            int randomID = Random.Range(0, tempList.Count);
-            likedAttribute = tempList[randomID];
-            tempList.RemoveAt(randomID);
-
-            randomID = Random.Range(0, tempList.Count);
-            hatedAttribute = tempList[randomID];
-
             for (int i = 0; i < _audienceList.Count; i++)
             {
+                AttributeData likedAttribute = null;
+                AttributeData hatedAttribute = null;
+
+                List<AttributeData> tempList = new List<AttributeData>(_attributes);
+
+                int randomID = Random.Range(0, tempList.Count);
+                likedAttribute = tempList[randomID];
+                tempList.RemoveAt(randomID);
+
+                randomID = Random.Range(0, tempList.Count);
+                hatedAttribute = tempList[randomID];
+
                 _audienceList[i].ShowAttributes(likedAttribute, hatedAttribute);
             }
         }
