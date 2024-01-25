@@ -83,7 +83,7 @@ namespace GlobalGameJam.Gameplay
         public void SetToldJoke(JokeData joke, IdeaData[] ideas)
         {
             CurrentJoke = joke;
-            CurrentIdeas = ideas;
+            CurrentIdeas = ideas != null ? ideas : new IdeaData[0];
         }
     }
 }

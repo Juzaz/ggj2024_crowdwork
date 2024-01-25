@@ -239,13 +239,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _comedian: {fileID: 0}
   _audienceParent: {fileID: 0}
-  _bigGoodResponses: []
-  _moderateGoodResponses: []
-  _smallGoodResponses: []
-  _neutralResponses: []
-  _smallBadResponses: []
-  _moderateBadResponses: []
-  _bigBadResponses: []
+  _bigGoodResponses:
+  - {fileID: 8300000, guid: f740fac2c115e584ba9f0656d28a136a, type: 3}
+  _moderateGoodResponses:
+  - {fileID: 8300000, guid: 68397953c7c982b419bc5658d60aebb0, type: 3}
+  - {fileID: 8300000, guid: 5c849fc6817d1df4eb33df5b246879aa, type: 3}
+  _smallGoodResponses:
+  - {fileID: 8300000, guid: 37d66fa00c56913458d1f82ed4263acf, type: 3}
+  _tinyGoodResponses:
+  - {fileID: 8300000, guid: a600eb9aad523c241b1aa69015502898, type: 3}
+  _neutralResponses:
+  - {fileID: 8300000, guid: 4ed3233bb355198439d634879e4e96ea, type: 3}
+  _tinyBadResponses: []
+  _smallBadResponses:
+  - {fileID: 8300000, guid: 738547753b34ac34aa67fd40c000fd29, type: 3}
+  _moderateBadResponses:
+  - {fileID: 8300000, guid: 7790d0f7a62971f47829653fc065e8e5, type: 3}
+  - {fileID: 8300000, guid: 3dedbfe5d9f16d74b9e7317df25fd8e2, type: 3}
+  _bigBadResponses:
+  - {fileID: 8300000, guid: a010a844b6d672c4ebb78fa3c1eac030, type: 3}
 --- !u!1 &6014669969681111703
 GameObject:
   m_ObjectHideFlags: 0

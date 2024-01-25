@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7bb3637e6c1ad14db42aeb2e564b341, type: 3}
   m_Name: idea_2
   m_EditorClassIdentifier: 
-  IdeaSpriteIndex: 2
+  IdeaSpriteIndex: 1
   Texture: {fileID: -1779608207, guid: aab8e3050693f1e44b4c7b46074c3ab9, type: 3}
   Attributes:
   - {fileID: 11400000, guid: c74d2ed7f53b1024b9c123559effdcb0, type: 2}

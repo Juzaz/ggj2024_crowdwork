@@ -58,7 +58,7 @@ namespace GlobalGameJam.Gameplay.States
             {
                 jokeAttributes.AddRange(currentIdeas[i].Attributes);
             }
-            punchlineAttribute = jokeAttributes[jokeAttributes.Count - 1];
+            punchlineAttribute = jokeAttributes.Count > 0 ? jokeAttributes[jokeAttributes.Count - 1] : null;
 
             int jokeScore = 0;
             int satisfiedAudienceMembers = 0;
@@ -104,36 +104,36 @@ namespace GlobalGameJam.Gameplay.States
 
             if (satisfiedAudienceMembers >= 10)
             {
-                satisfiedAudio = _bigGoodResponses[Random.Range(0, _bigGoodResponses.Length)];
+                satisfiedAudio = getRandomAudioFromList(_bigGoodResponses);
             }
             else if (satisfiedAudienceMembers >= 8)
             {
-                satisfiedAudio = _moderateGoodResponses[Random.Range(0, _moderateGoodResponses.Length)];
+                satisfiedAudio = getRandomAudioFromList(_moderateGoodResponses);
             }
             else if (satisfiedAudienceMembers >= 4)
             {
-                satisfiedAudio = _smallGoodResponses[Random.Range(0, _smallGoodResponses.Length)];
+                satisfiedAudio = getRandomAudioFromList(_smallGoodResponses);
             }
             else if (satisfiedAudienceMembers >= 1)
             {
-                satisfiedAudio = _tinyGoodResponses[Random.Range(0, _tinyGoodResponses.Length)];
+                satisfiedAudio = getRandomAudioFromList(_tinyGoodResponses);
             }
 
             if (dissatisfiedAudienceMembers >= 10)
             {
-                dissatisfiedAudio = _bigBadResponses[Random.Range(0, _bigBadResponses.Length)];
+                    dissatisfiedAudio = getRandomAudioFromList(_bigBadResponses);
             }
             else if (dissatisfiedAudienceMembers >= 8)
             {
-                dissatisfiedAudio = _moderateBadResponses[Random.Range(0, _moderateBadResponses.Length)];
+                    dissatisfiedAudio = getRandomAudioFromList(_moderateBadResponses);
             }
             else if (dissatisfiedAudienceMembers >= 4)
             {
-                dissatisfiedAudio = _smallBadResponses[Random.Range(0, _smallBadResponses.Length)];
+                    dissatisfiedAudio = getRandomAudioFromList(_smallBadResponses);
             }
             else if (dissatisfiedAudienceMembers >= 1)
             {
-                dissatisfiedAudio = _tinyBadResponses[Random.Range(0, _tinyBadResponses.Length)];
+                    dissatisfiedAudio = getRandomAudioFromList(_tinyBadResponses);
             }
 
             _delayLenght = 0.0f;
@@ -164,6 +164,12 @@ namespace GlobalGameJam.Gameplay.States
                 }
 
             }
+        }
+
+        private AudioClip getRandomAudioFromList(AudioClip[] audioList)
+        {
+            if (audioList.Length == 0) return null;
+            return audioList[Random.Range(0, audioList.Length)];
         }
 
         protected override void DisableState()
