@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 using GlobalGameJam.Data;
 using GlobalGameJam.Gameplay.States;
@@ -14,6 +15,12 @@ namespace GlobalGameJam.Gameplay
         [SerializeField] private GameObject _waitForInitialization = null;
         [SerializeField] private GameObject _audienceParent = null;
         [SerializeField] private GameObject _ideasParent = null;
+        [SerializeField] private TMP_Text _scoreText = null;
+        [SerializeField] private TMP_Text _roundText = null;
+
+        [Space]
+
+        [SerializeField] private int _maxRounds = 5;
 
         private List<AudienceMember> _audienceList = new List<AudienceMember>();
         private List<BaseState> _gameStateList = new List<BaseState>();
@@ -21,6 +28,9 @@ namespace GlobalGameJam.Gameplay
 
         private Dictionary<GameplayStateEnum, BaseState> _gameStateDictionary = new Dictionary<GameplayStateEnum, BaseState>();
         private GameplayStateEnum _gameplayState = GameplayStateEnum.Intro;
+
+        private int _currentScore = 0;
+        private int _currentRound = 0;
 
         public JokeData CurrentJoke { get; private set; }
         public IdeaData[] CurrentIdeas { get; private set; }
@@ -60,6 +70,9 @@ namespace GlobalGameJam.Gameplay
                 _gameStateDictionary.Add(_gameStateList[i].State, _gameStateList[i]);
             }
 
+            ResetScore();
+            IncrementRound();
+
             _gameplayState = GameplayStateEnum.Intro;
             _gameStateDictionary[_gameplayState].StartState(onGameStateFinished);
         }
@@ -84,6 +97,33 @@ namespace GlobalGameJam.Gameplay
         {
             CurrentJoke = joke;
             CurrentIdeas = ideas != null ? ideas : new IdeaData[0];
+        }
+
+        public void IncrementRound()
+        {
+            _currentRound++;
+            _roundText.SetText($"Round: {_currentRound}/{_maxRounds}");
+        }
+
+        public bool EndGame()
+        {
+            return _currentRound == _maxRounds;
+        }
+
+        public void ResetScore()
+        {
+            _currentScore = 0;
+
+
+            _scoreText.SetText($"Score: {_currentScore}");
+        }
+
+        public void AddToScore(int score, int satisfied, int dissatisfied)
+        {
+            _currentScore += score;
+
+
+            _scoreText.SetText($"Score: {_currentScore}");
         }
     }
 }

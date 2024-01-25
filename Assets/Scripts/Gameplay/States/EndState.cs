@@ -15,9 +15,21 @@ namespace GlobalGameJam.Gameplay.States
         [Header("Scene references")]
         [SerializeField] private Animator _comedian = null;
 
+        private bool _endGame = false;
+
         protected override void EnableState()
         {
             _introTimer = 0.0f;
+            _endGame = _gameplayManager.EndGame();
+
+            if (_endGame)
+            {
+
+            }
+            else
+            {
+                _gameplayManager.IncrementRound();
+            }
         }
 
         protected override void DisableState()
@@ -26,8 +38,9 @@ namespace GlobalGameJam.Gameplay.States
 
         private void Update()
         {
-            _introTimer += Time.deltaTime;
+            if (_endGame) return;
 
+            _introTimer += Time.deltaTime;
             if (_introTimer >= _introSequenceLenght)
             {
                 EndState();

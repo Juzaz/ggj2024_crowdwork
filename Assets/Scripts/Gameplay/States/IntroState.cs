@@ -1,4 +1,5 @@
 using UnityEngine;
+
 using GlobalGameJam.Audio;
 
 namespace GlobalGameJam.Gameplay.States
@@ -13,7 +14,6 @@ namespace GlobalGameJam.Gameplay.States
 
         [Header("Scene references")]
         [SerializeField] private Animator _comedian = null;
-
         [SerializeField] private AudioClip _music = null;
 
         protected override void EnableState()
