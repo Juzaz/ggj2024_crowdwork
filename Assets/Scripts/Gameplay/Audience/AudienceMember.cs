@@ -27,6 +27,8 @@ namespace GlobalGameJam.Gameplay
 
         public void ShowAttributes(AttributeData likedAttribute, AttributeData hatedAttribute)
         {
+            ResetState();
+
             _likedAttribute = likedAttribute;
             _hatedAttribute = hatedAttribute;
 
@@ -45,12 +47,20 @@ namespace GlobalGameJam.Gameplay
 
         public void Laugh()
         {
-
+            _animator.SetTrigger("Good");
+            HideAttributes();
         }
 
         public void Boo()
         {
+            _animator.SetTrigger("Bad");
+            HideAttributes();
+        }
 
+        public void ResetState()
+        {
+            _animator.SetTrigger("Reset");
+            HideAttributes();
         }
     }
 }

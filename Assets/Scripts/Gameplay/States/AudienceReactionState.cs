@@ -72,10 +72,16 @@ namespace GlobalGameJam.Gameplay.States
                 if (punchlineAttribute == _audienceList[i].LikedAttribute)
                 {
                     satisfiedAudienceMembers++;
+                    _audienceList[i].Laugh();
                 }
                 else if (punchlineAttribute == _audienceList[i].HatedAttribute)
                 {
                     dissatisfiedAudienceMembers++;
+                    _audienceList[i].Boo();
+                }
+                else
+                {
+                    _audienceList[i].ResetState();
                 }
             }
 
