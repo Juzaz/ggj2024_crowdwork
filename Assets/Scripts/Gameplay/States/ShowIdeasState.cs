@@ -19,6 +19,13 @@ namespace GlobalGameJam.Gameplay.States
         [SerializeField] private int _minIdeaCount = 5;
         [SerializeField] private int _maxIdeaCount = 10;
 
+        private List<IdeaBubble> _ideaBubbles = new List<IdeaBubble>();
+
+        protected override void InitializeState()
+        {
+            _ideaBubbles.AddRange(_ideasParent.GetComponentsInChildren<IdeaBubble>(true));
+        }
+
         protected override void EnableState()
         {
             _timer = 0.0f;
@@ -26,9 +33,7 @@ namespace GlobalGameJam.Gameplay.States
             List<IdeaData> ideaList = new List<IdeaData>(DatabaseManager.Instance.Ideas);
             int _ideaAmount = Random.Range(_minIdeaCount, _maxIdeaCount + 1);
 
-            List<IdeaBubble> ideaBubbles = new List<IdeaBubble>();
-            ideaBubbles.AddRange(_ideasParent.GetComponentsInChildren<IdeaBubble>(true));
-
+            List<IdeaBubble> ideaBubbles = new List<IdeaBubble>(_ideaBubbles);
             for (int i = 0; i < _ideaAmount; i++)
             {
                 IdeaData ideaData = ideaList[Random.Range(0, ideaList.Count)];
@@ -43,6 +48,10 @@ namespace GlobalGameJam.Gameplay.States
 
         protected override void DisableState()
         {
+            for (int i = 0; i < _ideaBubbles.Count; i++)
+            {
+                _ideaBubbles[i].gameObject.SetActive(false);
+            }
         }
 
         private void Update()

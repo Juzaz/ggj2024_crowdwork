@@ -25,7 +25,7 @@ namespace GlobalGameJam.Gameplay
             _launchAngle = Random.Range(0.0f, 1.0f);
             _launchForce = Random.Range(1.0f, 5.0f);
 
-            _force = new Vector3(_launchAngle, 1.0f, 1.0f) * _launchForce;
+            _force = new Vector3(_launchAngle, 1.0f, 0.0f) * _launchForce;
         }
 
         private void OnDisable()
