@@ -45,7 +45,7 @@ namespace GlobalGameJam.Gameplay.States
                 int _finalScore = _gameplayManager.FinalScore;
                 _finalScoreText.SetText((_finalScore * 10).ToString());
 
-                if (_finalScore <= 15)
+                if (_finalScore <= 19)
                 {
                     _comedian.SetTrigger("Death");
                     Audio.AudioManager.Instance.PlaySFX(_negativeAudience[0]);
@@ -56,7 +56,7 @@ namespace GlobalGameJam.Gameplay.States
                         _audienceList[i].Boo();
                     }
                 }
-                else if (_finalScore >= 40)
+                else if (_finalScore >= 30)
                 {
                     _comedian.SetTrigger("Victory");
                     Audio.AudioManager.Instance.PlaySFX(_happyAudience[0]);
