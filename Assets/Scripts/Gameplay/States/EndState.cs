@@ -56,7 +56,7 @@ namespace GlobalGameJam.Gameplay.States
                         _audienceList[i].Boo();
                     }
                 }
-                else if (_finalScore > 30)
+                else if (_finalScore >= 40)
                 {
                     _comedian.SetTrigger("Victory");
                     Audio.AudioManager.Instance.PlaySFX(_happyAudience[0]);
