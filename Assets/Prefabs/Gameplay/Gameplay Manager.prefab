@@ -237,7 +237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ced9e8aae2125249900c451654c4f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _introSequenceLenght: 1
   _comedian: {fileID: 0}
   _goodResponse: {fileID: 8300000, guid: 68397953c7c982b419bc5658d60aebb0, type: 3}
 --- !u!1 &6014669969681111703
@@ -485,5 +484,5 @@ MonoBehaviour:
   _drumrolls:
   - {fileID: 8300000, guid: b7b0e8f781da0274ba4bd3c32329d629, type: 3}
   - {fileID: 8300000, guid: 25a129bf43ddeed499b83f4afd5a591e, type: 3}
-  _tellingJoke: {fileID: 8300000, guid: aff85db64f3659f4eb92cbecea86fa53, type: 3}
   _missedJoke: {fileID: 8300000, guid: 00574ce25cd6b7a43aa3d07231970c04, type: 3}
+  _defaultJoke: {fileID: 8300000, guid: c803bfefae618d54d87b0031886671d2, type: 3}

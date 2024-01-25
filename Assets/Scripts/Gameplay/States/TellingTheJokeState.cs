@@ -20,6 +20,7 @@ namespace GlobalGameJam.Gameplay.States
         [Header("Audio")]
         [SerializeField] private AudioClip[] _drumrolls = null;
         [SerializeField] private AudioClip _missedJoke = null;
+        [SerializeField] private AudioClip _defaultJoke = null;
 
         JokeData _jokeData = null;
         string _jokeToTell = null;
@@ -79,6 +80,7 @@ namespace GlobalGameJam.Gameplay.States
 
                 _comicAnimator.SetTrigger("Joke");
 
+                AudioClip joke = _jokeData.Audio != null ? _jokeData.Audio : _defaultJoke;
                 AudioManager.Instance.PlaySFX(_jokeData.Audio);
                 _timeToEnd = _jokeData.Audio.length + 1.5f;
 
