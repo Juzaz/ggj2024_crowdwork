@@ -33,7 +33,7 @@ namespace GlobalGameJam.Gameplay
                 yield return null;
             }
 
-            _gameStateList.AddRange(GetComponentsInChildren<BaseState>());
+            _gameStateList.AddRange(GetComponentsInChildren<BaseState>(true));
             _audienceList.AddRange(_audienceParent.GetComponentsInChildren<AudienceMember>());
             _ideaBubbles.AddRange(_ideasParent.GetComponentsInChildren<IdeaBubble>());
 
@@ -52,6 +52,7 @@ namespace GlobalGameJam.Gameplay
 
             for (int i = 0; i < _gameStateList.Count; i++)
             {
+                Debug.Log("state: " + _gameStateList[i].State);
                 _gameStateDictionary.Add(_gameStateList[i].State, _gameStateList[i]);
             }
 

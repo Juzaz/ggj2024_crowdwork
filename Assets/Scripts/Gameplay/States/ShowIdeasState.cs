@@ -19,6 +19,10 @@ namespace GlobalGameJam.Gameplay.States
         [SerializeField] private int _minIdeaCount = 5;
         [SerializeField] private int _maxIdeaCount = 10;
 
+        [Header("References")]
+        [SerializeField] private Animator _comicAnimator = null;
+        [SerializeField] private Microphone _microphone = null;
+
         private List<IdeaBubble> _ideaBubbles = new List<IdeaBubble>();
 
         protected override void InitializeState()
@@ -31,6 +35,8 @@ namespace GlobalGameJam.Gameplay.States
             _timer = 0.0f;
 
             List<IdeaData> ideaList = new List<IdeaData>(DatabaseManager.Instance.Ideas);
+            _maxIdeaCount = Mathf.Min(_maxIdeaCount, ideaList.Count);
+
             int _ideaAmount = Random.Range(_minIdeaCount, _maxIdeaCount + 1);
 
             List<IdeaBubble> ideaBubbles = new List<IdeaBubble>(_ideaBubbles);
@@ -44,14 +50,16 @@ namespace GlobalGameJam.Gameplay.States
 
                 ideaBubble.SetIdea(ideaData);
             }
+
+            _comicAnimator.SetTrigger("Spinning");
         }
 
         protected override void DisableState()
         {
-            for (int i = 0; i < _ideaBubbles.Count; i++)
-            {
-                _ideaBubbles[i].gameObject.SetActive(false);
-            }
+            //for (int i = 0; i < _ideaBubbles.Count; i++)
+            //{
+            //    _ideaBubbles[i].gameObject.SetActive(false);
+            //}
         }
 
         private void Update()

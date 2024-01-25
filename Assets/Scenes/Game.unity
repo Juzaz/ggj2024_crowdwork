@@ -161,6 +161,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2773209078894841195, guid: d5c8b925e07b9db4d9e771552b7fb1ae, type: 3}
   m_PrefabInstance: {fileID: 1545087398}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &706131460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5777576494381506438, guid: d5c8b925e07b9db4d9e771552b7fb1ae, type: 3}
+  m_PrefabInstance: {fileID: 1545087398}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dadf502249c94a44992a21faca032ea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &814461806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -169,6 +180,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1218093747420368006, guid: afe4ecd899c4852499587952266c2c83, type: 3}
+      propertyPath: _microphone
+      value: 
+      objectReference: {fileID: 706131460}
+    - target: {fileID: 1218093747420368006, guid: afe4ecd899c4852499587952266c2c83, type: 3}
+      propertyPath: _ideasParent
+      value: 
+      objectReference: {fileID: 1396487704}
+    - target: {fileID: 1218093747420368006, guid: afe4ecd899c4852499587952266c2c83, type: 3}
+      propertyPath: _comicAnimator
+      value: 
+      objectReference: {fileID: 600068545}
+    - target: {fileID: 1891242600667782173, guid: afe4ecd899c4852499587952266c2c83, type: 3}
+      propertyPath: _comedian
+      value: 
+      objectReference: {fileID: 600068545}
     - target: {fileID: 5572518419648802163, guid: afe4ecd899c4852499587952266c2c83, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -214,9 +241,21 @@ PrefabInstance:
       value: Gameplay Manager
       objectReference: {fileID: 0}
     - target: {fileID: 7858372030173286543, guid: afe4ecd899c4852499587952266c2c83, type: 3}
+      propertyPath: _microphone
+      value: 
+      objectReference: {fileID: 706131460}
+    - target: {fileID: 7858372030173286543, guid: afe4ecd899c4852499587952266c2c83, type: 3}
       propertyPath: _ideasParent
       value: 
       objectReference: {fileID: 1396487704}
+    - target: {fileID: 7858372030173286543, guid: afe4ecd899c4852499587952266c2c83, type: 3}
+      propertyPath: _comicAnimator
+      value: 
+      objectReference: {fileID: 600068545}
+    - target: {fileID: 7858372030173286543, guid: afe4ecd899c4852499587952266c2c83, type: 3}
+      propertyPath: _sequenceLenght
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7891365061586361141, guid: afe4ecd899c4852499587952266c2c83, type: 3}
       propertyPath: _comedian
       value: 
@@ -488,10 +527,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 220269261560453374, guid: d5c8b925e07b9db4d9e771552b7fb1ae, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1020155091349360115, guid: d5c8b925e07b9db4d9e771552b7fb1ae, type: 3}
       propertyPath: m_Name
       value: Comedian

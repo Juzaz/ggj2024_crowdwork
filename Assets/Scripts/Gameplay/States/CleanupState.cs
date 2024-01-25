@@ -12,9 +12,14 @@ namespace GlobalGameJam.Gameplay.States
         [SerializeField, Range(0.0f, 15.0f)] private float _sequenceLenght = 1.0f;
         private float _timer = 0.0f;
 
+        [Header("References")]
+        [SerializeField] Animator _comedian = null;
+
         protected override void EnableState()
         {
             _timer = 0.0f;
+
+            _comedian.SetTrigger("Reset");
         }
 
         protected override void DisableState()

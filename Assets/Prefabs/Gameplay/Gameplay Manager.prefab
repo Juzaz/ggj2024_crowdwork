@@ -90,11 +90,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sequenceLenght: 10
-  _minIdeaCount: 5
-  _maxIdeaCount: 10
   _ideasParent: {fileID: 0}
-  _horizontalRange: {x: -0.5, y: 2}
-  _verticalRange: {x: 1, y: 2}
+  _minIdeaCount: 4
+  _maxIdeaCount: 8
+  _comicAnimator: {fileID: 0}
+  _microphone: {fileID: 0}
 --- !u!1 &1744937361787859529
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +174,7 @@ Transform:
   - {fileID: 6315986232451857669}
   - {fileID: 1318917970879579423}
   - {fileID: 3202696012146988458}
+  - {fileID: 6888166954149286867}
   - {fileID: 17997667280380682}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -192,6 +193,52 @@ MonoBehaviour:
   _waitForInitialization: {fileID: 0}
   _audienceParent: {fileID: 0}
   _ideasParent: {fileID: 0}
+--- !u!1 &7277382921756668694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6888166954149286867}
+  - component: {fileID: 1218093747420368006}
+  m_Layer: 2
+  m_Name: Throw And Collect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6888166954149286867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277382921756668694}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5572518419648802163}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1218093747420368006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277382921756668694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d90c68e8ddc184abaf49814ad398d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comicAnimator: {fileID: 0}
+  _microphone: {fileID: 0}
 --- !u!1 &7336482180723015348
 GameObject:
   m_ObjectHideFlags: 0
