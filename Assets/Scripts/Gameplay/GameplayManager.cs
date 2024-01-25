@@ -106,7 +106,7 @@ namespace GlobalGameJam.Gameplay
             _currentScore = 0;
 
             _roundText.SetText($"Round: {_currentRound}/{_maxRounds}");
-            _scoreText.SetText($"Score: {_currentScore}");
+            _scoreText.SetText($"Score: {_currentScore*10}");
         }
 
         public void IncrementRound()
@@ -125,7 +125,7 @@ namespace GlobalGameJam.Gameplay
             _currentScore = 0;
 
 
-            _scoreText.SetText($"Score: {_currentScore}");
+            _scoreText.SetText($"Score: {_currentScore*10}");
         }
 
         public void AddToScore(int score, int satisfied, int dissatisfied)
@@ -133,7 +133,7 @@ namespace GlobalGameJam.Gameplay
             _currentScore += score;
 
 
-            _scoreText.SetText($"Score: {_currentScore}");
+            _scoreText.SetText($"Score: {_currentScore*10}");
         }
     }
 }

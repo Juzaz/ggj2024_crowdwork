@@ -45,7 +45,7 @@ namespace GlobalGameJam.Gameplay.States
                 int _finalScore = _gameplayManager.FinalScore;
                 _finalScoreText.SetText(_finalScore.ToString());
 
-                if (_finalScore < -3)
+                if (_finalScore <= 0)
                 {
                     _comedian.SetTrigger("Death");
                     Audio.AudioManager.Instance.PlaySFX(_negativeAudience[0]);

@@ -32,8 +32,8 @@ namespace GlobalGameJam.Gameplay
             _likedAttribute = likedAttribute;
             _hatedAttribute = hatedAttribute;
 
-            _likedSpriteRenderer.sprite = _likedAttribute.Attribute;
-            _hatedSpriteRenderer.sprite = _hatedAttribute.Attribute;
+            _likedSpriteRenderer.GetComponentInParent<SpriteRenderer>().color = _likedAttribute.Color;
+            _hatedSpriteRenderer.GetComponentInParent<SpriteRenderer>().color = _hatedAttribute.Color;
 
             _likedSpriteRenderer.gameObject.SetActive(true);
             _hatedSpriteRenderer.gameObject.SetActive(true);
