@@ -98,6 +98,8 @@ namespace GlobalGameJam.Gameplay.States
                 }
             }
 
+            _gameplayManager.AddToScore(jokeScore, satisfiedAudienceMembers, dissatisfiedAudienceMembers);
+
             AudioClip neutralAudio = _neutralResponses[Random.Range(0, _neutralResponses.Length)];
             AudioClip satisfiedAudio = null;
             AudioClip dissatisfiedAudio = null;
@@ -163,6 +165,18 @@ namespace GlobalGameJam.Gameplay.States
                     }
                 }
 
+                if (jokeScore > 0)
+                {
+                    _comedian.SetTrigger("Good");
+                }
+                else if (jokeScore < 0)
+                {
+                    _comedian.SetTrigger("Bad");
+                }
+                else
+                {
+                    _comedian.SetTrigger("Neutral");
+                }
             }
         }
 
