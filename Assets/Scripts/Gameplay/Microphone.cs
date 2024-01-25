@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace GlobalGameJam.Gameplay
@@ -15,15 +13,20 @@ namespace GlobalGameJam.Gameplay
 
         private Vector3 _startingPosition;
         private Vector3 _force;
+        private bool _forceAndAngleSet;
 
         private void OnEnable()
         {
-            if (_startingPosition != Vector3.zero)
+            if (_startingPosition == Vector3.zero)
                 _startingPosition = transform.position;
 
-            _launchAngle = Random.Range(0.0f, 1.0f);
-            _launchForce = Random.Range(1.0f, 5.0f);
+            if (!_forceAndAngleSet)
+            {
+                _launchAngle = Random.Range(0.0f, 1.0f);
+                _launchForce = Random.Range(1.0f, 5.0f);
+            }
 
+            _forceAndAngleSet = false;
             _force = new Vector3(_launchAngle, 1.0f, 0.0f) * _launchForce;
         }
 
@@ -32,12 +35,20 @@ namespace GlobalGameJam.Gameplay
             transform.position = _startingPosition;
         }
 
+        public void SetAngleAndForce(float angle, float force)
+        {
+            _forceAndAngleSet = true;
+
+            _launchAngle = 1.0f - angle;
+            _launchForce = 1.0f + (force * 4.0f);
+        }
+
         private void FixedUpdate()
         {
             transform.position += _force * Time.fixedDeltaTime * _timeScale;
             _force.y -= _mavity * Time.fixedDeltaTime * _timeScale;
 
-            if (transform.position.y <= 0.90f || transform.position.x >= 2.2f)
+            if (transform.position.y <= 0.70f || transform.position.x >= 2.4f)
             {
                 gameObject.SetActive(false);
             }

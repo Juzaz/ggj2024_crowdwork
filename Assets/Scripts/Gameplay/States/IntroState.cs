@@ -13,6 +13,8 @@ namespace GlobalGameJam.Gameplay.States
         [Header("Scene references")]
         [SerializeField] private Animator _comedian = null;
 
+        [SerializeField] private AudioClip _music = null;
+
         protected override void EnableState()
         {
             _introTimer = 0.0f;

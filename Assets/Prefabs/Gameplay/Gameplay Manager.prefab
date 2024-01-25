@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sequenceLenght: 1
+  _comedian: {fileID: 0}
 --- !u!1 &1621319169286273539
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,12 +90,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f8c02b364122049a812a154b8015d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sequenceLenght: 10
+  _sequenceLenght: 1.5
   _ideasParent: {fileID: 0}
   _minIdeaCount: 4
   _maxIdeaCount: 8
   _comicAnimator: {fileID: 0}
   _microphone: {fileID: 0}
+  forceControls: {fileID: 0}
 --- !u!1 &1744937361787859529
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _introSequenceLenght: 3
   _comedian: {fileID: 0}
+  _music: {fileID: 8300000, guid: 5ccebd32ea7f8584cbaa316461acbc35, type: 3}
 --- !u!1 &6014669969681111703
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d90c68e8ddc184abaf49814ad398d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ideasParent: {fileID: 0}
   _comicAnimator: {fileID: 0}
   _microphone: {fileID: 0}
 --- !u!1 &7336482180723015348

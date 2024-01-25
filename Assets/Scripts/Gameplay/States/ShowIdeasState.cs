@@ -13,6 +13,7 @@ namespace GlobalGameJam.Gameplay.States
         [Header("Duration")]
         [SerializeField, Range(0.0f, 15.0f)] private float _sequenceLenght = 1.0f;
         private float _timer = 0.0f;
+        private bool _sequenceWait = true;
 
         [Header("Ideas")]
         [SerializeField] private GameObject _ideasParent = null;
@@ -22,6 +23,7 @@ namespace GlobalGameJam.Gameplay.States
         [Header("References")]
         [SerializeField] private Animator _comicAnimator = null;
         [SerializeField] private Microphone _microphone = null;
+        [SerializeField] private AngleAndForceControls forceControls = null;
 
         private List<IdeaBubble> _ideaBubbles = new List<IdeaBubble>();
 
@@ -51,24 +53,32 @@ namespace GlobalGameJam.Gameplay.States
                 ideaBubble.SetIdea(ideaData);
             }
 
+            _sequenceWait = true;
             _comicAnimator.SetTrigger("Spinning");
         }
 
         protected override void DisableState()
         {
-            //for (int i = 0; i < _ideaBubbles.Count; i++)
-            //{
-            //    _ideaBubbles[i].gameObject.SetActive(false);
-            //}
+            _microphone.SetAngleAndForce(forceControls.Angle, forceControls.Force);
         }
 
         private void Update()
         {
-            _timer += Time.deltaTime;
-
-            if (_timer >= _sequenceLenght)
+            if (_sequenceWait)
             {
-                EndState();
+                _timer += Time.deltaTime;
+                if (_timer >= _sequenceLenght)
+                {
+                    forceControls.gameObject.SetActive(true);
+                    _sequenceWait = false;
+                }
+            }
+            else
+            {
+                if (!forceControls.gameObject.activeSelf)
+                {
+                    EndState();
+                }
             }
         }
     }
