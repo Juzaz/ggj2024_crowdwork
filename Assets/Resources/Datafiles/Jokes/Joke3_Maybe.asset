@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c8047eea037bd4bbf3a12df67ad9f4, type: 3}
   m_Name: Joke3_Maybe
   m_EditorClassIdentifier: 
-  Joke: "Maybe if we start telling people their \xA7 is a \xA7, they\u2019ll want
-    to \xA7 it."
+  Joke: "Maybe if we start telling people their \xA7 is a \xA7, they'll want to \xA7
+    it."
   Audio: {fileID: 8300000, guid: 7fbf6cffe414d89468fa676729cfafdd, type: 3}
