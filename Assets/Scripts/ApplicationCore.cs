@@ -12,8 +12,6 @@ namespace GlobalGameJam
         public static bool IsInitialized { get; private set; } = false;
         public static ApplicationCore Instance { get; private set; } = null;
 
-        private SceneEnums _currentScene = SceneEnums.Menu;
-
         private void Awake()
         {
             Instance = this;
@@ -39,23 +37,7 @@ namespace GlobalGameJam
             }
 
             IsInitialized = true;
-            _currentScene = (SceneEnums)SceneManager.GetActiveScene().buildIndex;
-
             yield break;
-        }
-
-        public void ChangeScene(SceneEnums scene)
-        {
-            if (_currentScene == scene)
-            {
-                Debug.LogError($"Already loaded in scene: {scene}");
-                return;
-            }
-
-            Debug.Log($"Changing to scene: {scene}");
-            _currentScene = scene;
-
-            SceneManager.LoadScene((int)scene);
         }
     }
 }
